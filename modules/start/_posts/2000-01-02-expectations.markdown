@@ -1,5 +1,5 @@
 ---
-title: Expectations
+title: expectations
 published: true
 ---
 

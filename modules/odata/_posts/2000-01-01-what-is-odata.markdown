@@ -1,5 +1,5 @@
 ---
-title: What is OData?
+title: what-is-odata
 published: true
 ---
 
