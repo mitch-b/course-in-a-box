@@ -6,7 +6,8 @@ var localhostLinkHelper = (function($){
         // update all links
         links.replaceWith(function(){
             var port = '';
-            if (typeof this.href !== 'undefined') {
+            if (typeof this.href !== 'undefined' &&
+                typeof this.href !== 'unknown') {
                 port = this.href;
             } else {
                 port = this.innerHTML;
