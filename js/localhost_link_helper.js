@@ -6,10 +6,11 @@ var localhostLinkHelper = (function($){
         // update all links
         links.replaceWith(function(){
             var port = '';
-            if (typeof this.href !== 'undefined')
+            if (typeof this.href !== 'undefined') {
                 port = this.href;
-            else
+            } else {
                 port = this.innerHTML;
+            }
             return '<a href="' + port.replace(/your-port-number/, portNumber) + '">' + this.text.replace(/your-port-number/, portNumber) + ' <a href="#" class="clear-portNumber">(<i class="fa fa-times"></i>)</a>';
         });
         $('.clear-portNumber').click(function(){
