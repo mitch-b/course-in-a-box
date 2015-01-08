@@ -3,6 +3,6 @@ description: Lab exercises on learning OData concepts while building clients and
 modules: [start, odata, client, netweavergateway, webapi, references, feedback]
 signups:
  - name: Mitchell Barry
-   image: https://avatars0.githubusercontent.com/u/1643072?v=3&s=460
+   image: https://avatars0.githubusercontent.com/u/1643072?v=3
    twitter: mitchbarry
    github_username: mitch-b
