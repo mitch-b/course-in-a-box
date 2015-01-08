@@ -1,6 +1,6 @@
 title: OData Lab: An Overview
 description: Lab exercises on learning OData concepts while building clients and services
-modules: [start, odata, client, netweavergateway, webapi, references, feedback]
+modules: [start, odata, feedback]
 signups:
  - name: Mitchell Barry
    image: https://avatars0.githubusercontent.com/u/1643072?v=3
