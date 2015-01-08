@@ -1,9 +1,9 @@
 ---
-title: expectations
+title: Expectations
 published: true
 ---
 
-# OData Lab: Expectations
+# Expectations
 
 1. You understand what a RESTful means as it applies to Web Services. For more information, see [Wikipedia](http://en.wikipedia.org/wiki/Representational_state_transfer#Applied_to_web_services) or your favorite knowledge base.
 1. You are familiar with C#, as we will be diving deep into Web API

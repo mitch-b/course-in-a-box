@@ -1,9 +1,9 @@
 ---
-title: about
+title: About
 published: true
 ---
 
-# OData Lab: What will you need?
+# What will you need?
 
 1. Estimated time to complete this lab is 4 hours.
 1. This lab is aimed towards web developers that are new to OData.

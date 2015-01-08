@@ -1,5 +1,5 @@
 ---
-title: what-does-odata-look-like
+title: What Does OData Look Like?
 published: true
 ---
 
