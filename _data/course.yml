@@ -1,5 +1,5 @@
 title: OData Lab - An Overview
-description: Lab exercises on learning OData concepts while building clients and services
+description: Learning OData concepts while building clients and services in SAP and ASP.NET
 modules: [start, odata, client, netweaver gateway, web api, references, feedback]
 signups:
  - name: Mitchell Barry
