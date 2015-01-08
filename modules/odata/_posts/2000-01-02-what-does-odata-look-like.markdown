@@ -19,7 +19,7 @@ Along with the verbs (or HTTP methods) above, an OData request will also include
 
 As you'd expect, we can interact with this entity using any of the HTTP methods above (if they are implemented by your service). Here are some example calls and responses.
 
-### `GET https://server.com/odata/Products`
+#### `GET https://server.com/odata/Products`
 
 _Response (200 OK):_
 
@@ -40,7 +40,7 @@ _Response (200 OK):_
 ]}}
 ```
 
-### `GET https://server.com/odata/Products(1)`
+#### `GET https://server.com/odata/Products(1)`
 
 _Response (200 OK):_
 
@@ -55,7 +55,7 @@ _Response (200 OK):_
 }
 ```
 
-### `POST https://server.com/odata/Products`
+#### `POST https://server.com/odata/Products`
 
 Send data:
 
