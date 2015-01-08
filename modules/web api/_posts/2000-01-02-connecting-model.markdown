@@ -11,7 +11,7 @@ For this demo, I have already supplied a sample data source running on SQL Serve
 
 > For those interested in replicating their own database instance, please use this Gist which contains the necessary SQL to build a database and table for this lab.
 >
-> https://gist.github.com/mitch-b/b49dc98a691b462a0684
+> <cite>[https://gist.github.com/mitch-b/b49dc98a691b462a0684](https://gist.github.com/mitch-b/b49dc98a691b462a0684)</cite>
 
 1. Let's add a new data context. Right click on Models folder, and choose 'Add New Item…'. Choose 'Data' in the category tree, and select 'ADO.NET Entity Data Model'. Name your data model ToDoModel.
 
