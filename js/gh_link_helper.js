@@ -3,8 +3,8 @@ var ghLinkHelper = (function($){
     var ghUserName = window.sessionStorage.getItem('ghUserName');
     var links = $("a[href*='your-github-username']");
     if (ghUserName) {
-        // update all linksa
-        links.replaceWith(function(){ 
+        // update all links
+        links.replaceWith(function(){
             return '<a href="' + this.href.replace(/your-github-username/, ghUserName) + '">' + this.text.replace(/your-github-username/, ghUserName) + ' <a href="#" class="clear-ghUserName">(<i class="fa fa-times"></i> clear username)</a>';
         });
         $('.clear-ghUserName').click(function(){

@@ -3,7 +3,7 @@ var localhostLinkHelper = (function($){
     var portNumber = window.sessionStorage.getItem('portNumber');
     var links = $("a[href*='your-port-number']");
     if (portNumber) {
-        // update all linksa
+        // update all links
         links.replaceWith(function(){
             return '<a href="' + this.href.replace(/your-port-number/, portNumber) + '">' + this.text.replace(/your-port-number/, portNumber) + ' <a href="#" class="clear-portNumber">(<i class="fa fa-times"></i>)</a>';
         });
@@ -25,7 +25,7 @@ var localhostLinkHelper = (function($){
             $('button', div).click(function(){
                 var portNumber = $('input', div).val();
                 window.sessionStorage.setItem('portNumber', portNumber);
-                window.open(links[i].href.replace(/your-port-number/, portNumber));
+                //window.open(links[i].href.replace(/your-port-number/, portNumber));
                 window.location = window.location;
             });
             }(i));
