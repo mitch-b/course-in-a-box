@@ -12,7 +12,7 @@ This lab is written to accommodate multiple audiences. After some discussions ab
 1. You are somewhat familiar with SAP and SAP GUI. We will be generating web services off existing BAPIs, so no ABAP knowledge is required.
 1. You are familiar with JavaScript, as we will be diving deep into SAPUI5.
 1. You have access to Visual Studio 2013 Update 3 or greater
-1. You have access to Eclipse Luna (4.1) or greater
+1. You have access to Eclipse Luna (4.4) or greater
   1. You have SAP UI5 Development Tookit plugin installed
   1. You have a JDK installed (recommended 8.x)
 1. You have Tomcat extracted for use in Eclipse (recommended 8.x)
