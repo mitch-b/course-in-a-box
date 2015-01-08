@@ -15,7 +15,6 @@ section {
 
 	a {
 		color: #fcfcfc;
-		border-bottom: 1px dotted;
 		text-decoration: none;
 		transition: all 0.3s linear;
 	}
@@ -24,6 +23,10 @@ section {
 		text-decoration: none;
 	}
 
+}
+
+.dotted {
+	border-bottom: 1px dotted;
 }
 
 .jumbotron header h1 {
