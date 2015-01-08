@@ -10,12 +10,13 @@ published: true
 
 > Internet Explorer (if JSON result) will automatically ask you to download the response. Just makes it slightly more inconvenient.
 
-    [http://localhost:your-port-number/odata/Todos](http://localhost:your-port-number/odata/Todos)
+[http://localhost:your-port-number/odata/Todos](http://localhost:your-port-number/odata/Todos)
 
 3. (Optional) Alternatively, you can use an extension like Postman for Chrome (recommended), or REST client for Firefox.
 
 Try several OData calls:
 
+```
     [http://localhost:your-port-number/odata/Todos(1)](http://localhost:your-port-number/odata/Todos(1))
 
     [http://localhost:your-port-number/odata/Todos(1)/UserCompletedBy](http://localhost:your-port-number/odata/Todos(1)/UserCompletedBy)
@@ -27,5 +28,6 @@ Try several OData calls:
 
     [http://localhost:your-port-number/odata/Todos/$count](http://localhost:your-port-number/odata/Todos/$count)
     [http://localhost:your-port-number/odata/Todos?$format=json](http://localhost:your-port-number/odata/Todos?$format=json)
+```
 
 You'll notice `$count` and `$format` are not supported. We'll check on those in the next section.
