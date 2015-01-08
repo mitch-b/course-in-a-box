@@ -16,18 +16,26 @@ published: true
 
 Try several OData calls:
 
-```
-    [http://localhost:your-port-number/odata/Todos(1)](http://localhost:your-port-number/odata/Todos(1))
+_Single result:_
 
-    [http://localhost:your-port-number/odata/Todos(1)/UserCompletedBy](http://localhost:your-port-number/odata/Todos(1)/UserCompletedBy)
+[http://localhost:your-port-number/odata/Todos(1)](http://localhost:your-port-number/odata/Todos(1))
 
-    [http://localhost:your-port-number/odata/Todos?$filter= Completed eq false](http://localhost:your-port-number/odata/Todos?$filter= Completed eq false)
+_Following a Foreign Key reference:_
 
-    [http://localhost:your-port-number/odata/Todos?$filter= Finished eq false](http://localhost:your-port-number/odata/Todos?$filter= Finished eq false)
-    [http://localhost:your-port-number/odata/Todos?$filter= Finished eq true](http://localhost:your-port-number/odata/Todos?$filter= Finished eq true)
+[http://localhost:your-port-number/odata/Todos(1)/UserCompletedBy](http://localhost:your-port-number/odata/Todos(1)/UserCompletedBy)
 
-    [http://localhost:your-port-number/odata/Todos/$count](http://localhost:your-port-number/odata/Todos/$count)
-    [http://localhost:your-port-number/odata/Todos?$format=json](http://localhost:your-port-number/odata/Todos?$format=json)
-```
+_Filtering:_
+
+[http://localhost:your-port-number/odata/Todos?$filter= Completed eq false](http://localhost:your-port-number/odata/Todos?$filter= Completed eq false)
+[http://localhost:your-port-number/odata/Todos?$filter= Finished eq false](http://localhost:your-port-number/odata/Todos?$filter= Finished eq false)
+[http://localhost:your-port-number/odata/Todos?$filter= Finished eq true](http://localhost:your-port-number/odata/Todos?$filter= Finished eq true)
+
+_Getting entity set count:_
+
+[http://localhost:your-port-number/odata/Todos/$count](http://localhost:your-port-number/odata/Todos/$count)
+
+_Requesting output content type:_
+
+[http://localhost:your-port-number/odata/Todos?$format=json](http://localhost:your-port-number/odata/Todos?$format=json)
 
 You'll notice `$count` and `$format` are not supported. We'll check on those in the next section.
