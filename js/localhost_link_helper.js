@@ -5,14 +5,14 @@ var localhostLinkHelper = (function($){
     if (portNumber) {
         // update all links
         links.replaceWith(function(){
-            var port = '';
+            var url = '';
             if (typeof this.href !== 'undefined' &&
                 typeof this.href !== 'unknown') {
-                port = this.href;
+                url = this.href;
             } else {
-                port = this.innerHTML;
+                url = this.innerHTML;
             }
-            return '<a href="' + port.replace(/your-port-number/, portNumber) + '">' + this.text.replace(/your-port-number/, portNumber) + ' <a href="#" class="clear-portNumber">(<i class="fa fa-times"></i>)</a>';
+            return '<a href="' + url.replace(/your-port-number/, portNumber) + '">' + this.text.replace(/your-port-number/, portNumber) + ' <a href="#" class="clear-portNumber">(<i class="fa fa-times"></i>)</a>';
         });
         $('.clear-portNumber').click(function(){
             window.sessionStorage.removeItem('portNumber');
