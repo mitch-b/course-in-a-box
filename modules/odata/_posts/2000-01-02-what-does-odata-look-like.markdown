@@ -21,7 +21,7 @@ As you'd expect, we can interact with this entity using any of the HTTP methods 
 
 ### `GET https://server.com/odata/Products`
 
-*Response (200 OK):*
+_Response (200 OK):_
 
 ```json
 { "d": { "results": [
@@ -42,7 +42,7 @@ As you'd expect, we can interact with this entity using any of the HTTP methods 
 
 ### `GET https://server.com/odata/Products(1)`
 
-*Response (200 OK): *
+_Response (200 OK):_
 
 ```json
 { "d": {
@@ -64,7 +64,7 @@ Send data:
     "name": "Slim Jim Extra Spicy Beef Stick"
 }
 ```
-*Response (201 Created):*
+_Response (201 Created):_
 
 ```json
 { "d": {
@@ -81,7 +81,7 @@ The true power of OData can be seen in our ability to filter, or query, data in 
 
 A request to `https://server.com/odata/Products?$filter= Category eq 'Meat'`
 
-*Response (200 OK): *
+_Response (200 OK):_
 ```json
 { "d": { "results": [
     {
@@ -101,7 +101,7 @@ A request to `https://server.com/odata/Products?$filter= Category eq 'Meat'`
 
 Or, how about `https://server.com/odata/Products?$filter= startswith(name, 'Slim')`
 
-*Response (200 OK): *
+_Response (200 OK):_
 ```json
 { "d": { "results": [
     {
