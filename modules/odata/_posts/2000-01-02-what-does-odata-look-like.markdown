@@ -84,6 +84,7 @@ The true power of OData can be seen in our ability to filter, or query, data in 
 A request to `https://server.com/odata/Products?$filter= Category eq 'Meat'`
 
 _Response (200 OK):_
+
 ```json
 { "d": { "results": [
     {
@@ -104,6 +105,7 @@ _Response (200 OK):_
 Or, how about `https://server.com/odata/Products?$filter= startswith(name, 'Slim')`
 
 _Response (200 OK):_
+
 ```json
 { "d": { "results": [
     {
