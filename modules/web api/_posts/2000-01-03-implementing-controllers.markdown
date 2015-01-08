@@ -30,7 +30,7 @@ Near the top of this controller, there are some instructions on registering this
 5. Open App_Start\WebApiConfig.cs
 6. Replace file contents with:
 
-```csharp
+```c#
 using Microsoft.Data.Edm;
 using ODataLab1.Models;
 using System.Web.Http;
