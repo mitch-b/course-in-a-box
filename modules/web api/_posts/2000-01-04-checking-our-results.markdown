@@ -27,7 +27,9 @@ _Following a Foreign Key reference:_
 _Filtering:_
 
 [http://localhost:your-port-number/odata/Todos?$filter= Completed eq false](http://localhost:your-port-number/odata/Todos?$filter= Completed eq false)
+
 [http://localhost:your-port-number/odata/Todos?$filter= Finished eq false](http://localhost:your-port-number/odata/Todos?$filter= Finished eq false)
+
 [http://localhost:your-port-number/odata/Todos?$filter= Finished eq true](http://localhost:your-port-number/odata/Todos?$filter= Finished eq true)
 
 _Getting entity set count:_

@@ -5,7 +5,7 @@ var localhostLinkHelper = (function($){
     if (portNumber) {
         // update all linksa
         links.replaceWith(function(){
-            return '<a href="' + this.href.replace(/your-port-number/, portNumber) + '">' + this.text.replace(/your-port-number/, portNumber) + ' <a href="#" class="clear-portNumber">(<i class="fa fa-times"></i> clear port number)</a>';
+            return '<a href="' + this.href.replace(/your-port-number/, portNumber) + '">' + this.text.replace(/your-port-number/, portNumber) + ' <a href="#" class="clear-portNumber">(<i class="fa fa-times"></i>)</a>';
         });
         $('.clear-portNumber').click(function(){
             window.sessionStorage.removeItem('portNumber');
