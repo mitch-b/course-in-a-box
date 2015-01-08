@@ -58,12 +58,14 @@ _Response (200 OK):_
 ### `POST https://server.com/odata/Products`
 
 Send data:
+
 ```json
 {
     "Category": "Meat",
     "name": "Slim Jim Extra Spicy Beef Stick"
 }
 ```
+
 _Response (201 Created):_
 
 ```json
