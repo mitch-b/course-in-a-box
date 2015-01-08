@@ -9,7 +9,9 @@ Now that we have our entity and data context in our application, let's build an 
 
 1. Open Package Manager Console by going to **Tools > NuGet Package Manager > Package Manager Console**.
 
-    PM> Install-Package Microsoft.AspNet.WebApi.OData
+```
+PM> Install-Package Microsoft.AspNet.WebApi.OData
+```
 
 This will install the OData v1-3 runtime provided by Microsoft for Web API 2.2.
 
@@ -28,7 +30,7 @@ Near the top of this controller, there are some instructions on registering this
 5. Open App_Start\WebApiConfig.cs
 6. Replace file contents with:
 
-```c#
+```csharp
 using Microsoft.Data.Edm;
 using ODataLab1.Models;
 using System.Web.Http;
