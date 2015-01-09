@@ -4,7 +4,7 @@ markdown: redcarpet
 permalink: /:categories/:title/
 
 
-ga_tracking_code: UA-5757664-19
+ga_tracking_code: UA-53724533-2
 p2pu_ga_tracking_code: UA-55722824-1
 
 # Some files we need to exclude, so Github can build the site
