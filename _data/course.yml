@@ -1,3 +1,4 @@
 title: OData Lab - An Overview
 description: Learning OData concepts while building clients and services in SAP and ASP.NET
 modules: [start, odata, netweaver gateway, web api, client, references, feedback]
+authors: ["Mitchell Barry,", "Peder Rice,", "and Sameer Naik"]
