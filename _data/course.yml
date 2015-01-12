@@ -1,4 +1,4 @@
 title: "OData Lab - An Overview"
-description: "OData Concepts: Building Clients and Services in OpenUI5, SAP and ASP.NET"
+description: "OData Concepts: Building Clients and Services in SAPUI5, SAP and ASP.NET"
 modules: [start, odata, netweaver gateway, web api, client, references, feedback]
 authors: ["Mitchell Barry,", "Peder Rice,", "and Sameer Naik"]
