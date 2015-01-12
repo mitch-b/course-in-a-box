@@ -17,21 +17,23 @@ layout: base
 			   href="{{site.baseurl}}/modules/start/about-this-lab/">
 			   <i class="fa fa-check-circle"></i> Begin This Course
 			</a>
-			|
-			<a class="btn btn-danger btn-lg"
-			   href="{{site.baseurl}}/modules/feedback/your-own-course/">
-				<i class="fa fa-code-fork"></i> Start Your Own Course
-			</a>
 		</p>
 
 		<h3>
 			{% for author in site.data.course.authors %}
 				{{author}}
 			{% endfor %}
-			<br />
+			<br /><br />
 			built on <a href="http://p2pu.org" class="dotted">P2PU</a>'s
 			<a class="dotted" href="http://howto.p2pu.org/">Course in a Box</a>.
 		</h3>
+		<br />
+		<p>
+			<a class="btn btn-danger btn-lg"
+			   href="{{site.baseurl}}/modules/feedback/your-own-course/">
+				<i class="fa fa-code-fork"></i> Start Your Own Course
+			</a>
+		</p>
 
 	</div>
 
