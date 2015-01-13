@@ -144,7 +144,7 @@ Applications exist independently, and navigation within those applications usual
 Remember, we already set our custom router class in our custom UIComponent above.
 
 ```js
-// &hellip;
+// ...
 
 routing: {
     config: {
@@ -154,7 +154,8 @@ routing: {
         targetAggregation: "detailPages",
         clearTarget: false
     },
-// &hellip;
+
+// ...
 ```
 
 ## Adjust index.html to load Component.js

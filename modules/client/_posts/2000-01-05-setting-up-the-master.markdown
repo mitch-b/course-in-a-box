@@ -38,7 +38,7 @@ We now need to build a list view to populate a Master list of sales orders from 
 
     Now we have our base `sap.m.Page` to add our content.
 
-1. Add a `sap.m.List` to the content of our Page.
+1. In the same file, add a `sap.m.List` to the content of our Page. Replace the Page object with the following:
 
     ```xml
     <Page
@@ -64,7 +64,7 @@ We now need to build a list view to populate a Master list of sales orders from 
 
     You'll notice a couple things here.
 
-    1. We are using our `{device>/}` model that we set in `Component.js`.
+    1. We are using our `{device>/}` model that we set in `Component.js`. See how we are accessing those helper attributes we created?
     1. We have a `sap.m.List` with `sap.m.ObjectListItem` items
     1. The items are populated from our model `{/SalesOrders}`. We have not yet configured this piece.
 
