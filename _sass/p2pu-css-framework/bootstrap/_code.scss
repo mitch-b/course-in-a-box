@@ -16,7 +16,7 @@ code {
   padding: 2px 4px;
   font-size: 90%;
   color: $code-color;
-  //background-color: $code-bg;
+  background-color: $code-bg;
   border-radius: $border-radius-base;
 }
 
@@ -40,7 +40,7 @@ pre {
   word-break: break-all;
   word-wrap: break-word;
   color: $pre-color;
-  //background-color: $pre-bg;
+  background-color: $pre-bg;
   border: 1px solid $pre-border-color;
   border-radius: $border-radius-base;
 
