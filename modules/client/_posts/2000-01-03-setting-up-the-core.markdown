@@ -165,28 +165,24 @@ Since we have now created a UIComponent which will set up our initial view (`App
 1. Open `index.html`
 1. Find the following context:
 
-        ```html js
-        <script>
-            sap.ui.localResources("odatalabclient");
-            var app = new sap.m.App({initialPage:"idApp1"});
-            var page = sap.ui.view({id:"idApp1", viewName:"odatalabclient.App", type:sap.ui.core.mvc.ViewType.XML});
-            app.addPage(page);
-            app.placeAt("content");
-        </script>
+        ```js
+        sap.ui.localResources("odatalabclient");
+        var app = new sap.m.App({initialPage:"idApp1"});
+        var page = sap.ui.view({id:"idApp1", viewName:"odatalabclient.App", type:sap.ui.core.mvc.ViewType.XML});
+        app.addPage(page);
+        app.placeAt("content");
         ```
 
 1. Replace the contents of this script with this snippet to create an instance of our `Component.js`
 
-        ```html js
-        <script>
-            sap.ui.getCore().attachInit(function() {
-                new sap.m.Shell({
-                    app: new sap.ui.core.ComponentContainer({
-                        height : "100%",
-                        name : "odatalabclient"
-                    })
-                }).placeAt("content");
-            });
-        </script>
+        ```js
+        sap.ui.getCore().attachInit(function() {
+            new sap.m.Shell({
+                app: new sap.ui.core.ComponentContainer({
+                    height : "100%",
+                    name : "odatalabclient"
+                })
+            }).placeAt("content");
+        });
         ```
 
