@@ -184,5 +184,5 @@ Since we have now created a UIComponent which will set up our initial view (`App
             })
         }).placeAt("content");
     });
-        ```
+    ```
 
