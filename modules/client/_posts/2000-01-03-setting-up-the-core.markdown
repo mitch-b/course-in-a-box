@@ -158,9 +158,9 @@ routing: {
 // ...
 ```
 
-## Adjust index.html to load Component.js
+## Adjust index.html to load our UIComponent instead of a NavContainer
 
-Since we have now created a UIComponent which will set up our initial view (`App.view.xml`), let's change our `index.html`. The default bootstrapping that the UI5 SDK does is create your initial view using JavaScript in the index. Let's clear that out and instantiate our new UIComponent instead.
+Since we have now created an extension of UIComponent which will set up our initial view (`App.view.xml`), let's change our `index.html`. The default bootstrapping that the UI5 SDK does is create your initial view using JavaScript in the index. Like we just read, using a NavContainer (which we get with `sap.m.App`), we don't get the powerful deep-linking capabilities of our router. So let's swap out a NavContainer for our UIComponent.
 
 1. Open `index.html`
 1. Find the following context:
@@ -173,7 +173,7 @@ Since we have now created a UIComponent which will set up our initial view (`App
     app.placeAt("content");
     ```
 
-1. Replace the contents of this script with this snippet to create an instance of our `Component.js`
+1. Replace the contents of this `<script>` tag with this snippet to create an instance of our `Component.js`
 
     ```js
     sap.ui.getCore().attachInit(function() {
