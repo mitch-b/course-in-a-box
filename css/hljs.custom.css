@@ -3,7 +3,7 @@ display:block;
 overflow-x:auto;
 /*background:#f0f0f0;*/
 -webkit-text-size-adjust:none;
-padding:.5em;
+/*padding:.5em;*/
 }
 
 .hljs,.hljs-subst,.hljs-tag .hljs-title,.nginx .hljs-title {
