@@ -201,22 +201,31 @@ Applications exist independently, and navigation within those applications usual
     });
     ```
 
-Remember, we already set our custom router class in our custom UIComponent above. So no action needs to be taken, this is just a flashback.
+    Remember, we already set our custom router class in our custom UIComponent above. So no action needs to be taken, this is just a reminder of how this comes into play with our UIComponent.
 
-```js
-// ...
+    ```js
+    // ...
 
-routing: {
-    config: {
-        routerClass: odatalabclient.Router,
-        viewType: "XML",
-        viewPath: "odatalabclient.view",
-        targetAggregation: "detailPages",
-        clearTarget: false
-    },
+    routing: {
+        config: {
+            routerClass: odatalabclient.Router,
+            viewType: "XML",
+            viewPath: "odatalabclient.view",
+            targetAggregation: "detailPages",
+            clearTarget: false
+        },
 
-// ...
-```
+    // ...
+    ```
+
+    In order to use the properties of our Router, we need to *include* it in our UIComponent as a dependency. At the top of the `Component.js` file, add our require statement.
+
+    ```js
+    jQuery.sap.declare("odatalabclient.Component");
+    jQuery.sap.require("odatalabclient.Router"); // added on line 2
+    ```
+
+That should be enough of our Component/Router configuration.
 
 ## Adjust index.html to load our UIComponent instead of a NavContainer
 
