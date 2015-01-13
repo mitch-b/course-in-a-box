@@ -29,6 +29,7 @@ At the base of our web application, we will create a new instance of a UICompone
 
 1. Create a new file by right clicking the folder `WebContent` and choosing New > File. This will create a new file at the same root as your `index.html` file.
 1. Name the new file `Component.js` (case sensitive).
+1. Copy the following snippet into the file.
 
 ```js
 jQuery.sap.declare("odatalabclient.Component");
@@ -108,6 +109,8 @@ sap.ui.core.UIComponent.extend("odatalabclient.Component", {
 //--::--// TODO: let's look at each segment above...
 
 ## Create Router.js
+
+[https://sapui5.netweaver.ondemand.com/sdk/#docs/guide/688f36bd758e4ce2b4e682eef4dc794e.html](https://sapui5.netweaver.ondemand.com/sdk/#docs/guide/688f36bd758e4ce2b4e682eef4dc794e.html)
 
 //--::--// TODO: let's add our navigation router. manage browser history etc.
 
