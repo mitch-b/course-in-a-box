@@ -7,7 +7,8 @@ published: true
 
 Now that our component and router are both set up, let's set up some views so that we can try running the app again.
 
-1. Open `/WebContent/odatalabclient/App.view.xml`:
+1. Open `/WebContent/odatalabclient/App.view.xml`
+1. Replace it's contents with:
 
 ```xml
 <mvc:View
