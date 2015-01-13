@@ -21,7 +21,7 @@ A Component in the UI5 world is an independent and resuable part of a web applic
 
   * UI components extend components and add rendering functionality to the component. They represent a screen area or element on the user interface, for example, a button or a shell, along with the respective settings and metadata.
 
-<cite> -- [SAPUI5 SDK Documentation](https://sapui5.netweaver.ondemand.com/sdk/#docs/guide/958ead51e2e94ab8bcdc90fb7e9d53d0.html)</cite>
+<cite> &mdash; [SAPUI5 SDK Documentation](https://sapui5.netweaver.ondemand.com/sdk/#docs/guide/958ead51e2e94ab8bcdc90fb7e9d53d0.html)</cite>
 
 <hr />
 
