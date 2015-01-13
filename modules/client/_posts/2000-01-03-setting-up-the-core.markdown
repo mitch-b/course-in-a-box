@@ -141,7 +141,7 @@ Applications exist independently, and navigation within those applications usual
     //--::--// TODO: let's add our navigation router. manage browser history etc.
     ```
 
-Remember, we already set our custom router class in our custom UIComponent above.
+Remember, we already set our custom router class in our custom UIComponent above. So no action needs to be taken, this is just a flashback.
 
 ```js
 // ...
@@ -165,7 +165,7 @@ Since we have now created a UIComponent which will set up our initial view (`App
 1. Open `index.html`
 1. Find the following context:
 
-        ```js
+        ```html js
         <script>
             sap.ui.localResources("odatalabclient");
             var app = new sap.m.App({initialPage:"idApp1"});
@@ -177,7 +177,7 @@ Since we have now created a UIComponent which will set up our initial view (`App
 
 1. Replace the contents of this script with this snippet to create an instance of our `Component.js`
 
-        ```js
+        ```html js
         <script>
             sap.ui.getCore().attachInit(function() {
                 new sap.m.Shell({
