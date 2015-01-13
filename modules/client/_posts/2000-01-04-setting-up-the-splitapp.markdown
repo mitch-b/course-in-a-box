@@ -13,14 +13,14 @@ Now that our component and router are both set up, let's reconfigure our index t
     > If this is the first XML file you've opened in the project, Eclipse sometimes defaults to a design view of XML. There is a tab near the bottom which allows you to switch to the Source view. Do that now.
 1. Replace it's contents with:
 
-        ```xml
-        <mvc:View
-            xmlns:mvc="sap.ui.core.mvc"
-            displayBlock="true"
-            xmlns="sap.m">
-            <SplitApp id="splitApp" />
-        </mvc:View>
-        ```
+    ```xml
+    <mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        displayBlock="true"
+        xmlns="sap.m">
+        <SplitApp id="splitApp" />
+    </mvc:View>
+    ```
 
     We are cleaning up the default `<View>` tag, and assigning a single `sap.m.SplitApp` as our sole control. Our `odatalabclient.Component`'s routes will assign the Master and Detail views into this SplitApp control. You will also notice that this is the `rootView` in our `odatalabclient.Component`.
 
