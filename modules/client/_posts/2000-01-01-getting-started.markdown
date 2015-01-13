@@ -9,7 +9,7 @@ Let's now build a very simple SAPUI5 client which will try to parse an OData end
 
 ## Creating the UI5 Project
 
-1. Open Eclipse Luna
+1. Open Eclipse
 1. If prompted, create a new workspace at `[your preferred directory]\workspaces\odata-lab`
 
 ![eclipse_01_create_workspace.PNG]({{site.baseurl}}/img/eclipse_01_create_workspace.PNG)
