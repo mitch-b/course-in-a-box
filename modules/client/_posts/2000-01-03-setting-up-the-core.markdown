@@ -31,80 +31,80 @@ At the base of our web application, we will create a new instance of a UICompone
 1. Name the new file `Component.js` (case sensitive).
 1. Copy the following snippet into the file.
 
-```js
-jQuery.sap.declare("odatalabclient.Component");
+    ```js
+    jQuery.sap.declare("odatalabclient.Component");
 
-sap.ui.core.UIComponent.extend("odatalabclient.Component", {
-    metadata: {
-        name: "OData Lab Client",
-        includes: [],
-        dependencies: {
-            libs: ["sap.m", "sap.ui.layout"],
-            components: []
-        },
-        rootView: "odatalabclient.App",
-        config: {
-            // add whatever config you need globally here
-        },
-        routing: {
-            config: {
-                routerClass: odatalabclient.Router,
-                viewType: "XML",
-                viewPath: "odatalabclient.view",
-                targetAggregation: "detailPages",
-                clearTarget: false
+    sap.ui.core.UIComponent.extend("odatalabclient.Component", {
+        metadata: {
+            name: "OData Lab Client",
+            includes: [],
+            dependencies: {
+                libs: ["sap.m", "sap.ui.layout"],
+                components: []
             },
-            routes: [
-                {
-                    pattern: "",
-                    name: "main",
-                    view: "Master",
-                    targetAggregation: "masterPages",
-                    targetControl: "splitApp",
-                    subroutes: [
-                        {
-                            pattern: "salesorder/{salesOrderId}/:tab:",
-                            name: "salesorder",
-                            view: "Detail"
-                        }
-                    ]
+            rootView: "odatalabclient.App",
+            config: {
+                // add whatever config you need globally here
+            },
+            routing: {
+                config: {
+                    routerClass: odatalabclient.Router,
+                    viewType: "XML",
+                    viewPath: "odatalabclient.view",
+                    targetAggregation: "detailPages",
+                    clearTarget: false
                 },
-                {
-                    name: "catchallMaster",
-                    view: "Master",
-                    targetAggregation: "masterPages",
-                    targetControl: "splitApp",
-                    subroutes: [
-                        {
-                            pattern: ":all:",
-                            name: "catchallDetail",
-                            view: "NotFound",
-                            transition: "show"
-                        }
-                    ]
-                }
-            ]
+                routes: [
+                    {
+                        pattern: "",
+                        name: "main",
+                        view: "Master",
+                        targetAggregation: "masterPages",
+                        targetControl: "splitApp",
+                        subroutes: [
+                            {
+                                pattern: "salesorder/{salesOrderId}/:tab:",
+                                name: "salesorder",
+                                view: "Detail"
+                            }
+                        ]
+                    },
+                    {
+                        name: "catchallMaster",
+                        view: "Master",
+                        targetAggregation: "masterPages",
+                        targetControl: "splitApp",
+                        subroutes: [
+                            {
+                                pattern: ":all:",
+                                name: "catchallDetail",
+                                view: "NotFound",
+                                transition: "show"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+
+        init: function() {
+            sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
+
+            // set device model (phone/desktop support)
+            var deviceModel = new sap.ui.model.json.JSONModel({
+                isTouch: sap.ui.Device.support.touch,
+                isNoTouch: !sap.ui.Device.support.touch,
+                isPhone: sap.ui.Device.system.phone,
+                isNoPhone: !sap.ui.Device.system.phone,
+                listMode: sap.ui.Device.system.phone ? "None" : "SingleSelectMaster",
+                listItemType: sap.ui.Device.system.phone ? "Active" : "Inactive"
+            });
+
+            deviceModel.setDefaultBindingMode("OneWay"); // only set once, then read-only
+            this.setModel(deviceModel, "device");
         }
-    },
-
-    init: function() {
-        sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
-
-        // set device model (phone/desktop support)
-        var deviceModel = new sap.ui.model.json.JSONModel({
-            isTouch: sap.ui.Device.support.touch,
-            isNoTouch: !sap.ui.Device.support.touch,
-            isPhone: sap.ui.Device.system.phone,
-            isNoPhone: !sap.ui.Device.system.phone,
-            listMode: sap.ui.Device.system.phone ? "None" : "SingleSelectMaster",
-            listItemType: sap.ui.Device.system.phone ? "Active" : "Inactive"
-        });
-
-        deviceModel.setDefaultBindingMode("OneWay"); // only set once, then read-only
-        this.setModel(deviceModel, "device");
-    }
-});
-```
+    });
+    ```
 
 //--::--// TODO: let's look at each segment above...
 
@@ -121,15 +121,15 @@ Since we have now created a UIComponent which will set up our initial view (`App
 1. Open `index.html`
 1. Find the following context:
 
-```js
-<script>
-    sap.ui.localResources("odatalabclient");
-    var app = new sap.m.App({initialPage:"idApp1"});
-    var page = sap.ui.view({id:"idApp1", viewName:"odatalabclient.App", type:sap.ui.core.mvc.ViewType.XML});
-    app.addPage(page);
-    app.placeAt("content");
-</script>
-```
+    ```js
+    <script>
+        sap.ui.localResources("odatalabclient");
+        var app = new sap.m.App({initialPage:"idApp1"});
+        var page = sap.ui.view({id:"idApp1", viewName:"odatalabclient.App", type:sap.ui.core.mvc.ViewType.XML});
+        app.addPage(page);
+        app.placeAt("content");
+    </script>
+    ```
 
 1. Replace the contents of this script with this snippet to create an instance of our `Component.js`
 
