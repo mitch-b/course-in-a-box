@@ -13,15 +13,15 @@ A Component in the UI5 world is an independent and resuable part of a web applic
 
 <hr />
 
-* *Faceless components* (class: `sap.ui.core.Component`)
+* **Faceless components** (class: `sap.ui.core.Component`)
 
   * Faceless components do not have a user interface and are used, for example, for a service that delivers data from a back-end system.
 
-* *UI components* (class: `sap.ui.core.UIComponent`)
+* **UI components** (class: `sap.ui.core.UIComponent`)
 
   * UI components extend components and add rendering functionality to the component. They represent a screen area or element on the user interface, for example, a button or a shell, along with the respective settings and metadata.
 
-<cite> -- SAPUI5 SDK Documentation</cite>
+<cite> -- [SAPUI5 SDK Documentation](https://sapui5.netweaver.ondemand.com/sdk/#docs/guide/958ead51e2e94ab8bcdc90fb7e9d53d0.html)</cite>
 
 <hr />
 
