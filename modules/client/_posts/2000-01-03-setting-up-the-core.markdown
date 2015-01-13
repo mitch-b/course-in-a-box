@@ -31,88 +31,131 @@ At the base of our web application, we will create a new instance of a UICompone
 1. Name the new file `Component.js` (case sensitive).
 1. Copy the following snippet into the file.
 
-```js
-jQuery.sap.declare("odatalabclient.Component");
+    ```js
+    jQuery.sap.declare("odatalabclient.Component");
 
-sap.ui.core.UIComponent.extend("odatalabclient.Component", {
-    metadata: {
-        name: "OData Lab Client",
-        includes: [],
-        dependencies: {
-            libs: ["sap.m", "sap.ui.layout"],
-            components: []
-        },
-        rootView: "odatalabclient.App",
-        config: {
-            // add whatever config you need globally here
-        },
-        routing: {
-            config: {
-                routerClass: odatalabclient.Router,
-                viewType: "XML",
-                viewPath: "odatalabclient.view",
-                targetAggregation: "detailPages",
-                clearTarget: false
+    sap.ui.core.UIComponent.extend("odatalabclient.Component", {
+        metadata: {
+            name: "OData Lab 1 Client",
+            includes: [],
+            dependencies: {
+                libs: ["sap.m", "sap.ui.layout"],
+                components: []
             },
-            routes: [
-                {
-                    pattern: "",
-                    name: "main",
-                    view: "Master",
-                    targetAggregation: "masterPages",
-                    targetControl: "splitApp",
-                    subroutes: [
-                        {
-                            pattern: "salesorder/{salesOrderId}/:tab:",
-                            name: "salesorder",
-                            view: "Detail"
-                        }
-                    ]
-                },
-                {
-                    name: "catchallMaster",
-                    view: "Master",
-                    targetAggregation: "masterPages",
-                    targetControl: "splitApp",
-                    subroutes: [
-                        {
-                            pattern: ":all:",
-                            name: "catchallDetail",
-                            view: "NotFound",
-                            transition: "show"
-                        }
-                    ]
+            rootView: "odatalabclient.App",
+            config: {
+                // add whatever config you need globally here
+                salesOrderService: {
+                    url: "", // populate this with URL given by instructor, or your previously built service
+                    user: "",
+                    password: ""
                 }
-            ]
+            },
+            routing: {
+                config: {
+                    routerClass: odatalabclient.Router,
+                    viewType: "XML",
+                    viewPath: "odatalabclient.view",
+                    targetAggregation: "detailPages",
+                    clearTarget: false
+                },
+                routes: [
+                    {
+                        pattern: "",
+                        name: "main",
+                        view: "Master",
+                        targetAggregation: "masterPages",
+                        targetControl: "splitApp",
+                        subroutes: [
+                            {
+                                pattern: "salesorder/{salesOrderId}/:tab:",
+                                name: "salesorder",
+                                view: "Detail"
+                            }
+                        ]
+                    },
+                    {
+                        name: "catchallMaster",
+                        view: "Master",
+                        targetAggregation: "masterPages",
+                        targetControl: "splitApp",
+                        subroutes: [
+                            {
+                                pattern: ":all:",
+                                name: "catchallDetail",
+                                view: "NotFound",
+                                transition: "show"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+
+        init: function() {
+            sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
+
+            // set device model (phone/desktop support)
+            var deviceModel = new sap.ui.model.json.JSONModel({
+                isTouch: sap.ui.Device.support.touch,
+                isNoTouch: !sap.ui.Device.support.touch,
+                isPhone: sap.ui.Device.system.phone,
+                isNoPhone: !sap.ui.Device.system.phone,
+                listMode: sap.ui.Device.system.phone ? "None" : "SingleSelectMaster",
+                listItemType: sap.ui.Device.system.phone ? "Active" : "Inactive"
+            });
+
+            deviceModel.setDefaultBindingMode("OneWay"); // only set once, then read-only
+            this.setModel(deviceModel, "device");
         }
-    },
+    });
+    ```
 
-    init: function() {
-        sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
 
-        // set device model (phone/desktop support)
-        var deviceModel = new sap.ui.model.json.JSONModel({
-            isTouch: sap.ui.Device.support.touch,
-            isNoTouch: !sap.ui.Device.support.touch,
-            isPhone: sap.ui.Device.system.phone,
-            isNoPhone: !sap.ui.Device.system.phone,
-            listMode: sap.ui.Device.system.phone ? "None" : "SingleSelectMaster",
-            listItemType: sap.ui.Device.system.phone ? "Active" : "Inactive"
-        });
+    1. Looking at our `deviceModel` setup, you'll see we have some helper items we can use within our view to accomodate phones or larger screens based on `{device>/isPhone}` and multiple other options.
 
-        deviceModel.setDefaultBindingMode("OneWay"); // only set once, then read-only
-        this.setModel(deviceModel, "device");
-    }
-});
-```
+    1. You'll notice we set up some routes already &hellip; we will create these view destinations soon.
 
-//--::--// TODO: let's look at each segment above...
+        Since our UIComponent will know about all views and routes underneath it, it makes sense to setup all of these URL matches to what views the UIComponent is responsible to show the end user.
+
+        Let's work on building our Router class which we are referencing in our UIComponent.
+
 
 ## Create Router.js
 
-[https://sapui5.netweaver.ondemand.com/sdk/#docs/guide/688f36bd758e4ce2b4e682eef4dc794e.html](https://sapui5.netweaver.ondemand.com/sdk/#docs/guide/688f36bd758e4ce2b4e682eef4dc794e.html)
+Our custom router will handle several things including browser navigation history and deep-linking. When it comes to explaining what your own navigation router in UI5 can do, nobody says it better than SAP.
 
-//--::--// TODO: let's add our navigation router. manage browser history etc.
+<hr />
+
+Applications exist independently, and navigation within those applications usually starts at the root control [&hellip;]. If you want to only be able to jump into your application at the starting point, then [&hellip;] that will work. However, it will not give you the ability to bookmark a certain position within the application, and it will not support resuming application flow from that bookmarked position.
+
+<cite> &mdash; [SAPUI5 SDK Documentation](https://sapui5.netweaver.ondemand.com/sdk/#docs/guide/688f36bd758e4ce2b4e682eef4dc794e.html)</cite>
+
+<hr />
+
+1. Create a new file by right clicking the folder `WebContent` and choosing New > File. This will create a new file at the same root as your `index.html` file.
+1. Name the new file `Router.js`.
+1. Copy the following snippet into the file.
+
+    ```js
+    //--::--// TODO: let's add our navigation router. manage browser history etc.
+    ```
+
+Remember, we already set our custom router class in our custom UIComponent above.
+
+```js
+// &hellip;
+
+routing: {
+    config: {
+        routerClass: odatalabclient.Router,
+        viewType: "XML",
+        viewPath: "odatalabclient.view",
+        targetAggregation: "detailPages",
+        clearTarget: false
+    },
+// &hellip;
+```
 
 ## Adjust index.html to load Component.js
 

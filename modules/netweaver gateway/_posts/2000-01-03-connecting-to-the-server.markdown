@@ -14,3 +14,9 @@ For those taking this lab at a different time, please ensure your user account h
 * `SEGW` - SAP NetWeaver Gateway Service Builder
 * `SICF` - Maintain Services
 * `SE80` - (Optional) Developer Workbench
+
+You **will also need a developer key** in the NetWeaver Gateway system in order to generate the runtime objects.
+
+These authorization objects are needed:
+
+* `S_RFC_ADM` authorization object needed if connecting to a remote system.

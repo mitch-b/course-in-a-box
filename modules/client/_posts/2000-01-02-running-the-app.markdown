@@ -15,7 +15,7 @@ First thing we'll want to do is figure out where we have Tomcat extracted. For t
 
 ## Adding a Server Runtime in Eclipse
 
-1. Click on Window > Show View ... > Other ...
+1. Click on Window > Show View &hellip; > Other &hellip;
 1. Type `servers` into the filter box. Double click on the Servers result.
 1. In my Eclipse perspective, the Servers view defaults to the bottom of my workbench. Right click inside this view pane and choose New > Server.
 1. Expand the Apache folder and choose the Tomcat version which matches your downloaded version. I will choose `Tomcat v8.0 Server`.
