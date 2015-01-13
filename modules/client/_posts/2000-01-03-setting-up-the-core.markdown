@@ -220,6 +220,9 @@ Applications exist independently, and navigation within those applications usual
 
     In order to use the properties of our Router, we need to *include* it in our UIComponent as a dependency. At the top of the `Component.js` file, add our require statement.
 
+1. Open `Component.js`
+1. Add this line near the top of the file:
+
     ```js
     jQuery.sap.declare("odatalabclient.Component");
     jQuery.sap.require("odatalabclient.Router"); // added on line 2
