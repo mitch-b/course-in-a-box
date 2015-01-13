@@ -22,7 +22,7 @@ In Web API OData, you can implement your own OData path handler which implements
 
 In order to have a valid path segment, we must declare a type which inherits from `ODataPathSegment`. This custom path segment will let Web API know information about the path segment name (`$count`), `IEdmType` (`Edm.Int32`, per OData v3 specification), and entity set (derive from controller).
 
-```c#
+```csharp
 using Microsoft.Data.Edm;
 using Microsoft.Data.Edm.Library;
 using System.Web.Http.OData.Routing;
@@ -63,7 +63,7 @@ Now that we have the path segment, we need to add a path handler.
 
 The path handler will hook into the default OData path handler and will recognize the "`$count`" segment, and return an instance of our above `ODataPathSegment`. If it sees anything other than "`$count`" as the segment name, it will pass through to the base method, as you would expect.
 
-```c#
+```csharp
 using Microsoft.Data.Edm;
 using System.Web.Http.OData.Routing;
 
@@ -89,7 +89,7 @@ Finally, we need a custom routing convention to tie this custom segment in with 
 
 A custom routing convention maps a route to an OData Controller and an Action. In this case, our route is "`$count`", our controller would be specified in the URI path (`https://server.com/odata/Products/$count`), and our action will need to be called `GetCount`. We can specify any name, but it will have to be available in every entity. Let's extend `EntitySetRoutingConvention` and override `SelectAction()`.
 
-```c#
+```csharp
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http.Controllers;
@@ -121,7 +121,7 @@ Now that we have a custom routing convention, let's register it in `WebApiConfig
 
 1. We need to include our new custom routing convention in a new list of `ODataRoutingConventions`. Add this line right before the call to `config.Routes.MapODataServiceRoute`.
 
-```c#
+```csharp
 IList<IODataRoutingConvention> conventions = ODataRoutingConventions.CreateDefault();
 conventions.Insert(0, new CountODataRoutingConvention()); // allow $count segments in WebAPI OData v1-3
 ```
@@ -130,13 +130,13 @@ conventions.Insert(0, new CountODataRoutingConvention()); // allow $count 
 
 1. Now, we add our custom conventions and our `CountODataPathHandler` into our `MapODataServiceRoute` call. Add these additional parameters to the function call.
 
-```c#
+```csharp
 config.Routes.MapODataServiceRoute("odata", "odata", GetModel(), new CountODataPathHandler(), conventions);
 ```
 
 Before we can run the project, we still need to implement our `GetCount` method in the `TodosController`. Remember, our custom routing convention determines the action name that is called. Add this action in your `TodosController`:
 
-```c#
+```csharp
 public HttpResponseMessage GetCount(ODataQueryOptions<Todo> queryOptions)
 {
     IQueryable<Todo> queryResults = queryOptions.ApplyTo(GetTodos()) as IQueryable<Todo>;
