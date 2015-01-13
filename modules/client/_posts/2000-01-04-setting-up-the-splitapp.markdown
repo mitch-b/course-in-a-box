@@ -30,7 +30,7 @@ Now that our component and router are both set up, let's reconfigure our index t
 
     Let's take a look at running the application now to make sure things are still good.
 
-1. Ensure your Tomcat server is still running by clicking on the Servers tab. If it says `[Running, Synchronized]`, then your server is still up and refreshed with your latest file changes.
+1. Ensure your Tomcat server is still running by clicking on the Servers tab. If it says `[Started, Synchronized]`, then your server is still up and refreshed with your latest file changes.
 1. Open your browser to [http://localhost:8080/odatalabclient/](http://localhost:8080/odatalabclient/)
 
 You should see a screen that looks similar to the last, but you shouldn't see "Title" at the top anymore.

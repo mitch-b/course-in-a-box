@@ -50,7 +50,7 @@ At the base of our web application, we will create a new instance of a UICompone
                 config: {
                     routerClass: odatalabclient.Router,
                     viewType: "XML",
-                    viewPath: "odatalabclient.view",
+                    viewPath: "odatalabclient",
                     targetAggregation: "detailPages",
                     clearTarget: false
                 },
@@ -226,6 +226,19 @@ Applications exist independently, and navigation within those applications usual
     ```js
     jQuery.sap.declare("odatalabclient.Component");
     jQuery.sap.require("odatalabclient.Router"); // added on line 2
+
+    // ...
+    ```
+
+1. Once we require our router class, we want to fire our initializer method. Put this line at the end of our `init` function in `Component.js`:
+
+    ```js
+        // ...
+        deviceModel.setDefaultBindingMode("OneWay"); // only set once, then read-only
+        this.setModel(deviceModel, "device");
+
+        this.getRouter().initialize();
+    }
     ```
 
 That should be enough of our Component/Router configuration.
@@ -257,4 +270,5 @@ Since we have now created an extension of UIComponent which will set up our init
         }).placeAt("content");
     });
     ```
+
 
