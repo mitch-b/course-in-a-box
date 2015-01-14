@@ -271,5 +271,6 @@ Since we have now created an extension of UIComponent which will set up our init
     });
     ```
 
-Why not run it and see what's new?
+If we run the application now, we'll see the same thing as the previous section. _After all that work?_ Well, yes. The root view of our entire application is _still_ `view/App.view.xml`. The contents of that file remain just a `sap.m.Page` object with a title of `'Title'`.
 
+Let's give the user interface of our application more attention in the next section.

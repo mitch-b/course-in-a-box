@@ -5,7 +5,7 @@ published: true
 
 # Setting up the SplitApp for our Master-Detail Views
 
-Now that our component and router are both set up, let's reconfigure our index to properly manage loading and unloading our Master-Detail.
+Now that our component and router are both set up, let's reconfigure our index to properly manage loading and unloading our Master-Detail application.
 
 ## Replace default App view with a SplitApp
 
