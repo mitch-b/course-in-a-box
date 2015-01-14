@@ -64,10 +64,61 @@ We now need to build a list view to populate a Master list of sales orders from 
 
     You'll notice a couple things here.
 
-    1. We are using our `{device>/}` model that we set in `Component.js`. See how we are accessing those helper attributes we created?
+    1. We are using our `{device}` model that we set in `Component.js`. See how we are accessing those helper attributes we created?
     1. We have a `sap.m.List` with `sap.m.ObjectListItem` items
     1. The items are populated from our model `{/SalesOrders}`. We have not yet configured this piece.
+
+1. Change the name of our Master controller in `Master.controller.js`
+
+    ```js
+    sap.ui.controller("odatalabclient.view.Master", {
+        // ...
+    ```
 
     Let's run our application now and see some of this in effect.
 
 1. Refresh your browser window to see our changes.
+
+//--::--// TODO: add image?
+
+## Master Controller
+
+Now that our view is up to speed, let's finally hook up to our OData service! In the `onInit` function of our controller, let's create an OData model and assign it to the model accessible in our view.
+
+To do that, let's add some config in our `Component.js` so that we don't have configuration saved in a controller.
+
+1. Open `Component.js`, identify the config section under metadata.
+1. Add our sales order service:
+
+    ```js
+    rootView: "odatalabclient.view.App",
+    config: {
+        salesOrderService: {
+            url: "http://localhost:your-port-number/odata/srv",
+            user: "TEST1",
+            password: "TestUserPassword"
+        }
+    },
+    ```
+
+1. In our `Master.controller.js`, let's un-comment the `onInit` function. (don't forget to remove the comma at the end of the function curly braces!)
+
+    ```js
+    sap.ui.controller("odatalabclient.view.Master", {
+
+    /**
+    * Called when a controller is instantiated and its View controls (if available) are already created.
+    * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
+    * @memberOf view.Master
+    */
+        onInit: function() {
+
+        }
+
+    });
+    ```
+
+
+
+
+

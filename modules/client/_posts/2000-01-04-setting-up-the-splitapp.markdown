@@ -33,4 +33,4 @@ Now that our component and router are both set up, let's reconfigure our index t
 1. Ensure your Tomcat server is still running by clicking on the Servers tab. If it says `[Started, Synchronized]`, then your server is still up and refreshed with your latest file changes.
 1. Open your browser to [http://localhost:8080/odatalabclient/](http://localhost:8080/odatalabclient/)
 
-You should see a screen that looks similar to the last, but you shouldn't see "Title" at the top anymore.
+You should see a screen that looks similar to the last, but you shouldn't see "Title" at the top anymore. You will also see errors in the console, looking for resource `odatalabclient/view/Master.view.xml`. This is because in our UIComponent, we set up route `""` which will try and load the Master view. Let's get that next.
