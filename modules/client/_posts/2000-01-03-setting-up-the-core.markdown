@@ -42,7 +42,7 @@ At the base of our web application, we will create a new instance of a UICompone
                 libs: ["sap.m", "sap.ui.layout"],
                 components: []
             },
-            rootView: "odatalabclient.App",
+            rootView: "odatalabclient.view.App",
             config: {
                 // add whatever config you need globally here
             },
@@ -50,7 +50,7 @@ At the base of our web application, we will create a new instance of a UICompone
                 config: {
                     routerClass: odatalabclient.Router,
                     viewType: "XML",
-                    viewPath: "odatalabclient",
+                    viewPath: "odatalabclient.view",
                     targetAggregation: "detailPages",
                     clearTarget: false
                 },
@@ -251,9 +251,9 @@ Since we have now created an extension of UIComponent which will set up our init
 1. Find the following context:
 
     ```js
-    sap.ui.localResources("odatalabclient");
+    // sap.ui.localResources("odatalabclient"); // delete this line
     var app = new sap.m.App({initialPage:"idApp1"});
-    var page = sap.ui.view({id:"idApp1", viewName:"odatalabclient.App", type:sap.ui.core.mvc.ViewType.XML});
+    var page = sap.ui.view({id:"idApp1", viewName:"odatalabclient.view.App", type:sap.ui.core.mvc.ViewType.XML});
     app.addPage(page);
     app.placeAt("content");
     ```
@@ -271,4 +271,5 @@ Since we have now created an extension of UIComponent which will set up our init
     });
     ```
 
+Why not run it and see what's new?
 

@@ -24,8 +24,45 @@ Let's now build a very simple SAPUI5 client which will try to parse an OData end
 1. Set library as 'sap.m' and leave 'Create an Initial View' checked.
 1. When creating the initial view, set Name to 'App' and choose XML development paradigm. Click Finish.
 1. If you are prompted to open the Java EE perspective, you can switch to it if you'd like.
+
+## Set namespacing
+
+For this demo, we will operate under the namespace base of `odatalabclient`. In this way, our views should live under `odatalabclient.view` namespace. Let's configure that now.
+
 1. Right click the folder named `odatalabclient` which is under the `WebContent` folder.
 1. Choose Rename&hellip; , change it to `view`. Our controllers (JS) and views (XML) will be stored in here.
 
+    Now that we've changed resource paths, we need to make UI5 aware of the changes we made.
+
+1. Open `index.html`
+1. Modify the `<script>` tag which loads the SAPUI5 core library. Change it to:
+
+    ```html
+    <script src="resources/sap-ui-core.js"
+            id="sap-ui-bootstrap"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-resourceRoots='{
+                "odatalabclient": "./"
+            }'>
+    </script>
+    ```
+
+    What we've done is told UI5 core that when it sees namespace `"odatalabclient"` to look in our root folder (`./`). Therefore, if we say `odatalabclient.view`, it should look in `./view`.
+
+    For now, let's also change the `sap.m.App` component in the next `<script>` tag to use the proper path. Delete the call to `sap.ui.localResources`, and change our `viewName` to `"odatalabclient.view.App"`.
+
+1. Make the following adjustments to the tag in `index.html`:
+
+    ```js
+    // sap.ui.localResources("odatalabclient"); // delete this line
+    var app = new sap.m.App({initialPage:"idApp1"});
+    var page = sap.ui.view({id:"idApp1", viewName:"odatalabclient.view.App", type:sap.ui.core.mvc.ViewType.XML});
+    app.addPage(page);
+    app.placeAt("content");
+    ```
+
+1. Change the `controllerName` property of `view/App.view.xml` to `odatalabclient.view.App`
+1. Change the `sap.ui.controller()` constructor to have a name of `odatalabclient.view.App`
 
 Now, let's take a look at what it takes to run a UI5 application on Tomcat.

@@ -25,7 +25,7 @@ We now need to build a list view to populate a Master list of sales orders from 
 
     ```xml
     <mvc:View
-        controllerName="odatalabclient.Master"
+        controllerName="odatalabclient.view.Master"
         displayBlock="true"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.m">
@@ -36,7 +36,7 @@ We now need to build a list view to populate a Master list of sales orders from 
     </mvc:View>
     ```
 
-    Now we have our base `sap.m.Page` to add our content.
+    Now we have our base `sap.m.Page` to add our content. You'll notice the controller name changes a bit to keep with our standard. I noticed that the 'New View' wizard does not retain a full namespace. This is something to be aware of.
 
 1. In the same file, add a `sap.m.List` to the content of our Page. Replace the Page object with the following:
 
