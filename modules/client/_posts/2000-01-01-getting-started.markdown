@@ -24,5 +24,8 @@ Let's now build a very simple SAPUI5 client which will try to parse an OData end
 1. Set library as 'sap.m' and leave 'Create an Initial View' checked.
 1. When creating the initial view, set Name to 'App' and choose XML development paradigm. Click Finish.
 1. If you are prompted to open the Java EE perspective, you can switch to it if you'd like.
+1. Right click the folder named `odatalabclient` which is under the `WebContent` folder.
+1. Choose Rename&hellip; , change it to `view`. Our controllers (JS) and views (XML) will be stored in here.
+
 
 Now, let's take a look at what it takes to run a UI5 application on Tomcat.
