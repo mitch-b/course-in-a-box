@@ -101,8 +101,9 @@ To do that, let's add some config in our `Component.js`.
     },
     ```
 
-  a. Change `server.com:1234` above to the hostname of the service you created in a previous module, or use an existing public OData source that you can find.
-  a. We are using an initial path of `/ODataLabClient/proxy/http/` because, inside of Eclipse's SAPUI5 Core Runtime libraries, we are provided a `com.sap.ui5.proxy.SimpleProxyServlet` class which will handle requesting resources that violate the [Same-origin policy](http://en.wikipedia.org/wiki/Same-origin_policy). Instead of worrying about CORS issues in our demo, let's just use this proxy servlet instead. SAP advises to not use this proxy class in production.
+  1. Change `server.com:1234` above to the hostname of the service you created in a previous module, or use an existing public OData source that you can find.
+
+  1. We are using an initial path of `/ODataLabClient/proxy/http/` because, inside of Eclipse's SAPUI5 Core Runtime libraries, we are provided a `com.sap.ui5.proxy.SimpleProxyServlet` class which will handle requesting resources that violate the [Same-origin policy](http://en.wikipedia.org/wiki/Same-origin_policy). Instead of worrying about CORS issues in our demo, let's just use this proxy servlet instead. SAP advises to not use this proxy class in production.
 
 1. Change the contents of `init` function of `Component.js`:
 
