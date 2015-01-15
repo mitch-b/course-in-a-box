@@ -101,24 +101,37 @@ To do that, let's add some config in our `Component.js` so that we don't have co
     },
     ```
 
-1. In our `Master.controller.js`, let's un-comment the `onInit` function. (don't forget to remove the comma at the end of the function curly braces!)
+1. Change the contents of `Master.controller.js`:
 
     ```js
+    jQuery.sap.require("odatalabclient.Component");
     sap.ui.controller("odatalabclient.view.Master", {
-
-    /**
-    * Called when a controller is instantiated and its View controls (if available) are already created.
-    * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-    * @memberOf view.Master
-    */
         onInit: function() {
-
+            var config = odatalabclient.Component.getMetadata().getConfig();
+            var url = config.salesOrderService.url;
+            var model = new sap.ui.model.odata.ODataModel(url, true);
+            // model.setDefaultCountMode("Inline");
+            this.getView().setModel(model);
         }
-
     });
     ```
 
+    The first line brings in our UIComponent shell so that we can access the config we added. Inside the `onInit` function, we bring the url into a variable and assign it into a new instance of an `sap.ui.model.odata.ODataModel` object. By getting the view object from our controller, we can inject our model.
 
+1. Refresh your browser window to see our changes.
 
+//--::--// TODO: add image
 
+We are seeing our sales orders! This is great.
 
+1. A request is sent to our router (which we initialized in our UIComponent)
+1. The request is loaded as a masterPages aggregation of our main view (App.view.xml)
+1. The view (Master.view.xml) is loaded in.
+1. The Master controller initialization event fires.
+1. We create an instance of an OData model (provided service URL)
+1. After assigning the model to the view, our List in our view is making a request about `/SalesOrders`
+  1. A call is made to the `$metadata` endpoint to get information about the service.
+  1. We attempt to read a `$count` of all resources
+  1. We read in some `/SalesOrders` records from the OData endpoint and display in our List
+
+All of this we have configured so far. Let's now try and display more information about these items in a detail view next.
