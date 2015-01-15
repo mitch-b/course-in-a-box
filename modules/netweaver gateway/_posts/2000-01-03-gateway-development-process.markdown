@@ -5,7 +5,11 @@ published: true
 
 # Gateway Service Development Process
 
-The gateway Service Builder (transaction `SEGW`) provides all the design time tools for the service creation process. The service creation process itself has three distinct steps, Data Model Definition, Service Implementation and Service Maintenance.
+The Gateway Service Builder (transaction `SEGW`) provides all the design time tools for the service creation process. The service creation process itself has three distinct steps:
+
+1. Data Model Definition
+1. Service Implementation
+1. Service Maintenance
 
 The figure below illustrates the three phases in service creation with the various methods that can be leveraged to perform each step. The blocks highlighted in blue is the approach we will be using in our demo service creation.
 
