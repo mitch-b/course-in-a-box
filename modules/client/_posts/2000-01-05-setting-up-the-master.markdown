@@ -121,6 +121,8 @@ To do that, let's add some config in our `Component.js` so that we don't have co
 
     The first line brings in our UIComponent shell so that we can access the config we added. Inside the `onInit` function, we bring the url into a variable and assign it into a new instance of an `sap.ui.model.odata.ODataModel` object. By getting the view object from our controller, we can inject our model. If your service endpoint does not require a username and password (or if you want to prompt the user for their credentials instead of an application ID), you can leave out specifying a user and password in the new `ODataModel`.
 
+    > If you are going to pass credentials like this, **use HTTPS only!**
+
 1. Refresh your browser window to see our changes.
 
 //--::--// TODO: add image
