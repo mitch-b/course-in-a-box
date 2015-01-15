@@ -26,8 +26,6 @@ Now that our component and router are both set up, let's reconfigure our index t
 
     We are cleaning up the default `<View>` tag, and assigning a single `sap.m.SplitApp` as our sole control. Our `odatalabclient.Component`'s routes will assign the Master and Detail views into this SplitApp control. You will also notice that this is the `rootView` in our `odatalabclient.Component`.
 
-1. (Optional) At this time, there is no need for the default `App.controller.js` file. Since our SplitApp will not have any logic in its own Controller, we can remove this file.
-
     Let's take a look at running the application now to make sure things are still good.
 
 1. Ensure your Tomcat server is still running by clicking on the Servers tab. If it says `[Started, Synchronized]`, then your server is still up and refreshed with your latest file changes.

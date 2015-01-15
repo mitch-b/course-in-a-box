@@ -48,7 +48,7 @@ We now need to build a list view to populate a Master list of sales orders from 
             <List
                 id="list"
                 mode="{device>/listMode}"
-                items="{/SalesOrderHeaderCollection}"
+                items="{/SalesOrders}"
                 growing="true"
                 growingScrollToLoad="true">
                 <items>
@@ -79,44 +79,48 @@ We now need to build a list view to populate a Master list of sales orders from 
 
 1. Refresh your browser window to see our changes.
 
-//--::--// TODO: add image?
+![client_02_master_list.PNG]({{site.baseurl}}/img/client_02_master_list.PNG)
 
 ## Master Controller
 
-Now that our view is up to speed, let's finally hook up to our OData service! In the `onInit` function of our controller, let's create an OData model and assign it to the model accessible in our view.
+Now that our view is up to speed, let's finally hook up to our OData service! In the UIComponent initialization, let's add our NetWeaver Gateway service. We are adding it here, because we are only using one domain model for this demo. All of our screens will use this model.
 
-To do that, let's add some config in our `Component.js` so that we don't have configuration saved in a controller.
+To do that, let's add some config in our `Component.js`.
 
 1. Open `Component.js`, identify the config section under metadata.
-1. Add our sales order service:
+1. Add our Sales Order service:
 
     ```js
     rootView: "odatalabclient.view.App",
     config: {
         salesOrderService: {
-            url: "http://localhost:your-port-number/odata/srv",
+            url: "/ODataLabClient/proxy/http/server.com:1234/sap/opu/odata/sap/service",
             user: "TEST1",
             password: "TestUserPassword"
         }
     },
     ```
 
-1. Change the contents of `Master.controller.js`:
+1. Change the contents of `init` function of `Component.js`:
 
     ```js
-    jQuery.sap.require("odatalabclient.Component");
-    sap.ui.controller("odatalabclient.view.Master", {
-        onInit: function() {
-            var config = odatalabclient.Component.getMetadata().getConfig();
-            var oModel = new sap.ui.model.odata.ODataModel(
-                config.salesOrderService.url,
-                true,
-                config.salesOrderService.user,
-                config.salesOrderService.password
-            );
-            this.getView().setModel(oModel);
-        }
-    });
+    init: function() {
+        sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
+
+        var mConfig = this.getMetadata().getConfig();
+
+        var oModel = new sap.ui.model.odata.ODataModel(
+            mConfig.salesOrderService.url,
+            true,
+            mConfig.salesOrderService.user,
+            mConfig.salesOrderService.password
+        );
+
+        this.setModel(oModel);
+
+        // set device model (phone/desktop support)
+        var deviceModel = new sap.ui.model.json.JSONModel({
+            // ...
     ```
 
     The first line brings in our UIComponent shell so that we can access the config we added. Inside the `onInit` function, we bring the url into a variable and assign it into a new instance of an `sap.ui.model.odata.ODataModel` object. By getting the view object from our controller, we can inject our model. If your service endpoint does not require a username and password (or if you want to prompt the user for their credentials instead of an application ID), you can leave out specifying a user and password in the new `ODataModel`.
@@ -125,18 +129,17 @@ To do that, let's add some config in our `Component.js` so that we don't have co
 
 1. Refresh your browser window to see our changes.
 
-//--::--// TODO: add image
+![client_03_master_list_with_data.PNG]({{site.baseurl}}/img/client_03_master_list_with_data.PNG)
 
 We are seeing our sales orders! This is great.
 
 1. A request is sent to our router (which we initialized in our UIComponent)
 1. The request is loaded as a masterPages aggregation of our main view (App.view.xml)
 1. The view (Master.view.xml) is loaded in.
-1. The Master controller initialization event fires.
-1. We create an instance of an OData model (provided service URL)
-1. After assigning the model to the view, our List in our view is making a request about `/SalesOrders`
+1. The list in our view is bound to `{/SalesOrders}` model property.
+1. SAPUI5 Core will make a request from our ODataModel to the service at resource `/SalesOrders`
   1. A call is made to the `$metadata` endpoint to get information about the service.
   1. We attempt to read a `$count` of all resources
-  1. We read in some `/SalesOrderHeaderCollection` records from the OData endpoint and display in our List
+  1. We read in some `/SalesOrders` records from the OData endpoint and display in our List
 
-All of this we have configured so far. Let's now try and display more information about these items in a detail view next.
+All of this we have configured so far. Before we can show too much detail about these items, we need a way to pass the information from this master list, through our Router, and into a separate Detail view. To do this, we need to look at assigning click events to our Master view and subscribing/publishing to UI5's EventBus to relay messages.

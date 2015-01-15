@@ -42,6 +42,7 @@ For this demo, we will operate under the namespace base of `odatalabclient`. In 
             id="sap-ui-bootstrap"
             data-sap-ui-libs="sap.m"
             data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-xx-bindingSyntax="complex"
             data-sap-ui-resourceRoots='{
                 "odatalabclient": "./"
             }'>
@@ -62,7 +63,7 @@ For this demo, we will operate under the namespace base of `odatalabclient`. In 
     app.placeAt("content");
     ```
 
-1. Change the `controllerName` property of `view/App.view.xml` to `odatalabclient.view.App`
-1. Change the `sap.ui.controller()` constructor to have a name of `odatalabclient.view.App`
+1. Delete the `controllerName` property found in `view/App.view.xml`. We have no need for a controller here.
+1. Delete `App.controller.js`.
 
 Now, let's take a look at what it takes to run a UI5 application on Tomcat.

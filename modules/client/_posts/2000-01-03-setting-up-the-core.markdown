@@ -33,6 +33,7 @@ At the base of our web application, we will create a new instance of a UICompone
 
     ```js
     jQuery.sap.declare("odatalabclient.Component");
+    jQuery.sap.require("odatalabclient.Router");
 
     sap.ui.core.UIComponent.extend("odatalabclient.Component", {
         metadata: {
@@ -44,7 +45,7 @@ At the base of our web application, we will create a new instance of a UICompone
             },
             rootView: "odatalabclient.view.App",
             config: {
-                // add whatever config you need globally here
+                // set global config here
             },
             routing: {
                 config: {
@@ -63,7 +64,7 @@ At the base of our web application, we will create a new instance of a UICompone
                         targetControl: "splitApp",
                         subroutes: [
                             {
-                                pattern: "salesorder/{salesOrderId}/:tab:",
+                                pattern: "{salesorder}",
                                 name: "salesorder",
                                 view: "Detail"
                             }
@@ -76,7 +77,7 @@ At the base of our web application, we will create a new instance of a UICompone
                         targetControl: "splitApp",
                         subroutes: [
                             {
-                                pattern: ":all:",
+                                pattern: ":all*:",
                                 name: "catchallDetail",
                                 view: "NotFound",
                                 transition: "show"
@@ -102,10 +103,11 @@ At the base of our web application, we will create a new instance of a UICompone
 
             deviceModel.setDefaultBindingMode("OneWay"); // only set once, then read-only
             this.setModel(deviceModel, "device");
+
+            this.getRouter().initialize();
         }
     });
     ```
-
 
     1. Looking at our `deviceModel` setup, you'll see we have some helper items we can use within our view to accomodate phones or larger screens based on `{device>/isPhone}` and multiple other options.
 
@@ -218,30 +220,9 @@ Applications exist independently, and navigation within those applications usual
     // ...
     ```
 
-    In order to use the properties of our Router, we need to *include* it in our UIComponent as a dependency. At the top of the `Component.js` file, add our require statement.
+    In order to use our custom Router, we need to *include* it in our UIComponent as a dependency. At the top of the `Component.js` file, you will find this require statement.
 
-1. Open `Component.js`
-1. Add this line near the top of the file:
-
-    ```js
-    jQuery.sap.declare("odatalabclient.Component");
-    jQuery.sap.require("odatalabclient.Router"); // added on line 2
-
-    // ...
-    ```
-
-1. Once we require our router class, we want to fire our initializer method. Put this line at the end of our `init` function in `Component.js`:
-
-    ```js
-        // ...
-        deviceModel.setDefaultBindingMode("OneWay"); // only set once, then read-only
-        this.setModel(deviceModel, "device");
-
-        this.getRouter().initialize();
-    }
-    ```
-
-That should be enough of our Component/Router configuration.
+That should be enough of our Component/Router configuration. Let's make sure UI5 knows to use them!
 
 ## Adjust index.html to load our UIComponent instead of a NavContainer
 
@@ -270,7 +251,6 @@ Since we have now created an extension of UIComponent which will set up our init
         }).placeAt("content");
     });
     ```
-
 If we run the application now, we'll see the same thing as the previous section. _After all that work?_ Well, yes. The root view of our entire application is _still_ `view/App.view.xml`. The contents of that file remain just a `sap.m.Page` object with a title of `'Title'`.
 
 Let's give the user interface of our application more attention in the next section.

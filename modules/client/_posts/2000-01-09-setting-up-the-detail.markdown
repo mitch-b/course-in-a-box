@@ -8,8 +8,8 @@ published: true
 Just like we set up our Master view, we'll do exactly the same with our Detail view. In our detail view, we hope to display:
 
 * Sales Order Number
-* Sold To Account
-* Amount
+* Buyer Name
+* NetAmount
 
 Any time our master list changes, our detail list should update with new values as well.
 
@@ -48,7 +48,7 @@ Any time our master list changes, our detail list should update with new values 
     Let's take a look at what we've set up.
 
     1. A navigation button will show depending on if our device is a phone or not. We'll demo that.
-    1. We have a `sap.m.Page` object whose content is an `sap.m.ObjectHeader` object which is currently displaying the `BuyerName` field from our Master list's `/SalesOrderHeaderCollection` objects.
+    1. We have a `sap.m.Page` object whose content is an `sap.m.ObjectHeader` object which is currently displaying the `BuyerName` field from our Master list's `/SalesOrders` objects.
 
     Now let's get our Detail controller ready to start pushing data to the view and handling our events.
 

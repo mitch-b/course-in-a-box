@@ -36,7 +36,6 @@ During this phase, operations that are to be supported by the gateway service (C
 This phase consists of service activation in the gateway system. The service is ready for consumption after this phase. Service activation can be performed using tcode `/IWFND/MAINT_SERVICES`. This functionality has also been extended in transaction `SEGW`.
 
 <hr />
-<br />
 
 ## Additional Tools
 
