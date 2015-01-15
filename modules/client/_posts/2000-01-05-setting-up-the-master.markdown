@@ -9,7 +9,7 @@ We now need to build a list view to populate a Master list of sales orders from 
 
 ## Create a new View
 
-1. Right click on the `odatalabclient` folder
+1. Right click on the `view` folder
 1. Choose New > Other &hellip;
 1. Type view in the filter box. Choose view under SAPUI5 Application Development folder.
 
@@ -48,7 +48,7 @@ We now need to build a list view to populate a Master list of sales orders from 
             <List
                 id="list"
                 mode="{device>/listMode}"
-                items="{/SalesOrders}"
+                items="{/SalesOrderHeaderCollection}"
                 growing="true"
                 growingScrollToLoad="true">
                 <items>
@@ -66,7 +66,7 @@ We now need to build a list view to populate a Master list of sales orders from 
 
     1. We are using our `{device}` model that we set in `Component.js`. See how we are accessing those helper attributes we created?
     1. We have a `sap.m.List` with `sap.m.ObjectListItem` items
-    1. The items are populated from our model `{/SalesOrders}`. We have not yet configured this piece.
+    1. The items are populated from our model `{/SalesOrderHeaderCollection}`. We have not yet configured this piece.
 
 1. Change the name of our Master controller in `Master.controller.js`
 
@@ -108,15 +108,18 @@ To do that, let's add some config in our `Component.js` so that we don't have co
     sap.ui.controller("odatalabclient.view.Master", {
         onInit: function() {
             var config = odatalabclient.Component.getMetadata().getConfig();
-            var url = config.salesOrderService.url;
-            var model = new sap.ui.model.odata.ODataModel(url, true);
-            // model.setDefaultCountMode("Inline");
-            this.getView().setModel(model);
+            var oModel = new sap.ui.model.odata.ODataModel(
+                config.salesOrderService.url,
+                true,
+                config.salesOrderService.user,
+                config.salesOrderService.password
+            );
+            this.getView().setModel(oModel);
         }
     });
     ```
 
-    The first line brings in our UIComponent shell so that we can access the config we added. Inside the `onInit` function, we bring the url into a variable and assign it into a new instance of an `sap.ui.model.odata.ODataModel` object. By getting the view object from our controller, we can inject our model.
+    The first line brings in our UIComponent shell so that we can access the config we added. Inside the `onInit` function, we bring the url into a variable and assign it into a new instance of an `sap.ui.model.odata.ODataModel` object. By getting the view object from our controller, we can inject our model. If your service endpoint does not require a username and password (or if you want to prompt the user for their credentials instead of an application ID), you can leave out specifying a user and password in the new `ODataModel`.
 
 1. Refresh your browser window to see our changes.
 
@@ -132,6 +135,6 @@ We are seeing our sales orders! This is great.
 1. After assigning the model to the view, our List in our view is making a request about `/SalesOrders`
   1. A call is made to the `$metadata` endpoint to get information about the service.
   1. We attempt to read a `$count` of all resources
-  1. We read in some `/SalesOrders` records from the OData endpoint and display in our List
+  1. We read in some `/SalesOrderHeaderCollection` records from the OData endpoint and display in our List
 
 All of this we have configured so far. Let's now try and display more information about these items in a detail view next.
