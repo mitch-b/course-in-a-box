@@ -32,13 +32,14 @@ During this phase, operations that are to be supported by the gateway service (C
 This phase consists of service activation in the gateway system. The service is ready for consumption after this phase. Service activation can be performed using tcode `/IWFND/MAINT_SERVICES`. This functionality has also been extended in transaction `SEGW`.
 
 <hr />
+<br />
 
 ## Additional Tools
 
-  ### Integrated test environment
+<h4>Integrated test environment</h4>
 
-  Transaction `/IWFND/GW_CLIENT` can be leveraged to test the service locally using various query options.
+Transaction `/IWFND/GW_CLIENT` can be leveraged to test the service locally using various query options.
 
-  ### Error Log Tracking
+<h4>Error Log Tracking</h4>
 
-  Transactions `/IWFND/ERROR_LOG` and `/IWFND/APPS_LOG` can be leveraged.
+Transactions `/IWFND/ERROR_LOG` and `/IWFND/APPS_LOG` can be leveraged.
