@@ -35,10 +35,10 @@ This phase consists of service activation in the gateway system. The service is 
 
 ## Additional Tools
 
-    ### Integrated test environment
+  ### Integrated test environment
 
-    Transaction `/IWFND/GW_CLIENT` can be leveraged to test the service locally using various query options.
+  Transaction `/IWFND/GW_CLIENT` can be leveraged to test the service locally using various query options.
 
-    ### Error Log Tracking
+  ### Error Log Tracking
 
-    Transactions `/IWFND/ERROR_LOG` and `/IWFND/APPS_LOG` can be leveraged.
+  Transactions `/IWFND/ERROR_LOG` and `/IWFND/APPS_LOG` can be leveraged.
