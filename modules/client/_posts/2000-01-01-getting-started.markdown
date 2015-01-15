@@ -53,7 +53,7 @@ For this demo, we will operate under the namespace base of `odatalabclient`. In 
 
     For now, let's also change the `sap.m.App` component in the next `<script>` tag to use the proper path. Delete the call to `sap.ui.localResources` (instead of setting our resource root in the script, we set it in the script source above), and change our `viewName` to `"odatalabclient.view.App"`.
 
-1. Make the following adjustments to the tag in `index.html`:
+1. Make the following adjustments to the tag in `index.html`. We will soon be removing this section, so don't worry about the contents too much right now.
 
     ```js
     // sap.ui.localResources("odatalabclient"); // delete this line
