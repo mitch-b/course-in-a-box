@@ -51,4 +51,4 @@ Let's attach an event handler to these in our Master view.
 
     ![client_04_click_event.PNG]({{site.baseurl}}/img/client_04_click_event.PNG)
 
-Now that we have attached to a click event, it's not too difficult to grab the binding context (the OData path, in this case) from the selected item. Before we do that though, let's spend time looking at UI5 Core's EventBus.
+Now that we have attached to a click event, it's not too difficult to grab the binding context (the OData path, in this case) from the selected item. Before we do that though, let's spend time looking at UI5 ability to extend classes to make our job easier going forward.

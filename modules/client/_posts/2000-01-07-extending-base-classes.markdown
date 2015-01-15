@@ -50,4 +50,6 @@ To make accessing the Router easy from all of our views/controllers, let's make 
     });
     ```
 
-1. Go ahead and run the app. It should behave exactly the same as before, but now we have demonstrated how you can extend a base class in UI5.
+1. Go ahead and run the app.
+
+It should behave exactly the same as before, but now we have demonstrated how you can extend a base class in UI5.
