@@ -7,6 +7,14 @@ published: true
 
 Let's now build a very simple SAPUI5 client which will try to parse an OData endpoint and display a list of objects based on the response it receives querying the entity set.
 
+## Our Goal
+
+Our goal will display Sales Orders in a Master-Detail view. A typical Master-Detail view has a list of items on one side, and upon selecting an item in the list, the Detail view will load additional data about the selected item.
+
+This is a screenshot of what our final product should look like.
+
+![client_05_detail.PNG]({{site.baseurl}}/img/client_05_detail.PNG)
+
 ## Creating the UI5 Project
 
 1. Open Eclipse
