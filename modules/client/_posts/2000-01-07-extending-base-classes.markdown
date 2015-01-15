@@ -1,15 +1,15 @@
 ---
-title: Using the EventBus
+title: Extending Base Classes
 published: true
 ---
 
-# Using the EventBus
+# Using Base Classes
 
-Add detail here about the EventBus from UI5 SDK
+In our UI5 application, we can create a base Controller class which can contain common functions that we may reuse and want in multiple places. These helper functions could include actions such as accessing the component's EventBus, or grabbing the UIComponent's custom Router we implemented.
 
-## Accessing the EventBus
+## Create a Base Controller
 
-To make accessing the EventBus easy from all of our views/controllers, let's make a base Controller class that we can extend to our Master, Detail or other controllers. In this base Controller, we can build helper methods which can reduce code verbosity. These helper methods would include actions such as accessing the component's EventBus, or grabbing the UIComponent's custom Router we implemented.
+To make accessing the Router easy from all of our views/controllers, let's make a base Controller class that we can extend to our Master, Detail or other controllers. In this base Controller, we can build helper methods which can reduce code verbosity.
 
 1. Create a new folder by right clicking on `WebContent`. Choose name `util`.
 1. Right click on `util` and choose New > File.
@@ -50,4 +50,4 @@ To make accessing the EventBus easy from all of our views/controllers, let's mak
     });
     ```
 
-1. Go ahead and run the app. It should behave exactly the same as before, but now we are prepared for subscribing and broadcasting messages over the EventBus in our controllers.
+1. Go ahead and run the app. It should behave exactly the same as before, but now we have demonstrated how you can extend a base class in UI5.

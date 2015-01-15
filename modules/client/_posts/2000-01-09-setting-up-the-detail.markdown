@@ -35,7 +35,7 @@ Any time our master list changes, our detail list should update with new values 
             showNavButton="{device>/isPhone}"
             navButtonPress="onNavBack"
             class="sapUiFioriObjectPage"
-            title="Sales Order Detail">
+            title="Sales Order">
             <content>
                 <ObjectHeader
                     title="{BuyerName}">
@@ -54,3 +54,30 @@ Any time our master list changes, our detail list should update with new values 
 
 1. Update the `Detail.controller.js` file with these contents:
 
+    ```js
+    jQuery.sap.require("odatalabclient.util.Controller");
+
+    odatalabclient.util.Controller.extend("odatalabclient.view.Detail", {
+
+        onInit : function() {
+            this.getRouter().attachRouteMatched(this.onRouteMatched, this);
+        },
+
+        onRouteMatched : function(oEvent) {
+            var oParameters = oEvent.getParameters();
+            var sSalesOrderPath = "/" + oParameters.arguments.salesorder;
+            this.bindView(sSalesOrderPath);
+        },
+
+        bindView : function (sSalesOrderPath) {
+            var oView = this.getView();
+            oView.bindElement(sSalesOrderPath);
+        }
+
+    });
+    ```
+
+1. Run the application
+1. Choose an item in the list
+
+    You should now see the BuyerName associated with the sales order show up in the Detail view.
