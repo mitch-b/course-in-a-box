@@ -49,9 +49,9 @@ For this demo, we will operate under the namespace base of `odatalabclient`. In 
     </script>
     ```
 
-    What we've done is told UI5 core that when it sees namespace `"odatalabclient"` to look in our root folder (`./`). Therefore, if we say `odatalabclient.view`, it should look in `./view`.
+    What we've done is told UI5 core that when it sees namespace `"odatalabclient"` to look in our root folder (`./`). This is relative to our `index.html` file, so `./` translates to our `WebContent` directory. Therefore, if we say `odatalabclient.view`, it should look in `./view`.
 
-    For now, let's also change the `sap.m.App` component in the next `<script>` tag to use the proper path. Delete the call to `sap.ui.localResources`, and change our `viewName` to `"odatalabclient.view.App"`.
+    For now, let's also change the `sap.m.App` component in the next `<script>` tag to use the proper path. Delete the call to `sap.ui.localResources` (instead of setting our resource root in the script, we set it in the script source above), and change our `viewName` to `"odatalabclient.view.App"`.
 
 1. Make the following adjustments to the tag in `index.html`:
 
