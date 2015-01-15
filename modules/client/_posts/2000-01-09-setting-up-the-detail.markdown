@@ -81,3 +81,5 @@ Any time our master list changes, our detail list should update with new values 
 1. Choose an item in the list
 
     You should now see the BuyerName associated with the sales order show up in the Detail view.
+
+![client_05_detail.PNG]({{site.baseurl}}/img/client_05_detail.PNG)
