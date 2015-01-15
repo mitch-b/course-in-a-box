@@ -16,7 +16,7 @@ Let's now build a very simple SAPUI5 client which will try to parse an OData end
 
 1. If presented with welcome screen, click the Workbench icon in the top right of this view.
 1. Create a new project by choosing the New Project icon, and choosing 'Project…'
-1. Search in filter for 'ui5' and click Next
+1. Search in filter for 'ui5', choose 'Application Project' and click Next
 
 ![eclipse_02_create_ui5_project.PNG]({{site.baseurl}}/img/eclipse_02_create_ui5_project.PNG)
 
