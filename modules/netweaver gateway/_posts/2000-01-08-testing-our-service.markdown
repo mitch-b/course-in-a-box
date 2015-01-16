@@ -159,7 +159,7 @@ _Response (200 OK):_
 }
 ```
 <br />
-#### `GET http://server.com:1234/sap/opu/odata/sap/Z_DEMO_ORDERS_SRV/SalesOrders('0500000011') ?$format=json`
+#### `GET http://server.com:1234/sap/opu/odata/sap/Z_DEMO_ORDERS_SRV/SalesOrders('0500000011')?$format=json`
 
 _Response (200 OK):_
 
