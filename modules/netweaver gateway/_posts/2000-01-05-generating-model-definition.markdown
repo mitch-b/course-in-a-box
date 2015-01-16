@@ -80,7 +80,7 @@ Now that we have our entity, we can make a collection of that Entity. A collecti
 
     ![sap_11_create_association.PNG]({{site.baseurl}}/img/sap_11_create_association.PNG)
 
-    We have `1` Sales Order, which has an association of `0..n` Line Items (since a Sales Order needs to exist to have 0 or more line items related to it).
+    For cardinality of the association, we have `1` Sales Order, which has `0..n` Line Items (since a Sales Order needs to exist to have 0 or more line items related to it).
 
     ![sap_12_create_association_2.PNG]({{site.baseurl}}/img/sap_12_create_association_2.PNG)
 
