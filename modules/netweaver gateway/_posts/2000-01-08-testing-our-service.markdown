@@ -56,7 +56,9 @@ _Response (200 OK):_
   </entry>
 </feed>
 ```
-
+<br />
+Your typical response will be in XML by default. If you want a JSON response, you need to ask for it (per OData spec). Simply append `$format=json` to your query, or change your `Accept` HTTP request header.
+<br />
 #### `GET http://server.com:1234/sap/opu/odata/sap/Z_DEMO_ORDERS_SRV/SalesOrders?$format=json`
 
 _Response (200 OK):_
@@ -108,7 +110,7 @@ _Response (200 OK):_
   }
 }
 ```
-
+<br />
 #### `GET http://server.com:1234/sap/opu/odata/sap/Z_DEMO_ORDERS_SRV/SalesOrders?$filter=SoId le '0500000010' and BuyerName eq 'TECUM' $format=json`
 
 ```json
@@ -156,7 +158,7 @@ _Response (200 OK):_
   }
 }
 ```
-
+<br />
 #### `GET http://server.com:1234/sap/opu/odata/sap/Z_DEMO_ORDERS_SRV/SalesOrders('0500000011') ?$format=json`
 
 _Response (200 OK):_
@@ -202,8 +204,8 @@ _Response (200 OK):_
   }
 }
 ```
-
-#### `GET http://server.com:1234/sap/opu/odata/sap/Z_DEMO_ORDERS_SRV/SalesOrders%28%270500000011%27%29/OrdtoItm?$format=json`
+<br />
+#### `GET http://server.com:1234/sap/opu/odata/sap/Z_DEMO_ORDERS_SRV/SalesOrders('0500000011')/OrdtoItm?$format=json`
 
 _Response (200 OK):_
 
