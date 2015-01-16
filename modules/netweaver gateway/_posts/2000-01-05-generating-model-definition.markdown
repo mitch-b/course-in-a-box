@@ -11,7 +11,7 @@ As we saw in the Gateway Service Development Process module, building the Model 
 
 1. Open transaction `SEGW`
 1. Click the Create New Project button
-1. Add your project name. For this demo, use Z[your ID]_DEMO_ORDERS
+1. Add your project name. When you are creating your project, use `Z[your ID]_DEMO_ORDERS`. For the purpose of training, the guide will just use `Z_DEMO_ORDERS`.
 
     Fill out the fields below as applicable.
 
