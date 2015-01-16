@@ -17,23 +17,23 @@ The figure below illustrates the three phases in service creation with the vario
 
 ## Data Model Definition
 
-In this phase we create the Entity Types that are needed and define the relationships between the entities. This can be done by using declarative data definition, import from an EDMX file or import from RFC/BOR interface.
+In this phase we create the Entity Types that are needed and define the relationships between the entities. This can be done by using declarative data definition (most time consuming, all manual), import from an EDMX file or import from RFC/BOR interface.
 
-A collection of entites (entity set) is exposed as a resource which can then be queried using a URI using various query options  that the OData protocol provides and the relevant HTTP verbs. After creating the  Entities, Entity Sets and Entity relationship we generate the repository objects.
+A collection of entities (entity set) is exposed as a resource which can then be queried using a URI using various query options that the OData protocol provides, and the relevant HTTP verbs. After creating the Entities, Entity Sets and Entity relationships, we generate the repository objects.
 
-As an example, if we were creating the back end services for a Sales Order display app, the entities could be orders, materials, business partners. The figure below is an attempt to represent this:
+As an example, if we were creating the back-end services for a Sales Order display application, the entities could be orders, materials, business partners. The figure below is an attempt to represent this:
 
 ![nwg_03_model_definition.PNG]({{site.baseurl}}/img/nwg_03_model_definition.PNG)
 
-After creating the data model one can generate the runtime artifacts for the service. The runtime artifacts that are created automatically are the Model Provider Class (MPC) and its extension class, Data Provider Class (DPC) stub and its extension class, the technical data model and the service.
+After creating the data model, one can generate the runtime artifacts for the service. The runtime artifacts that are created automatically are the Model Provider Class (MPC) and its extension class, Data Provider Class (DPC) stub and its extension class, the technical data model and the service.
 
 ## Service Implementation
 
-During this phase, operations that are to be supported by the gateway service (CRUD-Q) are coded or mapped to methods of a BOR or an RFC function module. This is achieved either by manual code based implementation using the ABAP workbench or by using the Map to Data Source function that is available in the `SEGW`.  Data provider class methods are manually changed or automatically generated  based on the option chosen.
+During this phase, operations that are to be supported by the gateway service (**C**reate, **R**ead, **U**pdate, **D**elete-**Q**uery, CRUD-Q) are coded or mapped to methods of a BOR or an RFC function module. This is achieved either by manual code-based implementation using the ABAP workbench or by using the 'Map to Data Source' function that is available in the transaction `SEGW`. Data provider class methods are manually changed or automatically generated based on the option chosen.
 
 ## Service Maintenance
 
-This phase consists of service activation in the gateway system. The service is ready for consumption after this phase. Service activation can be performed using tcode `/IWFND/MAINT_SERVICES`. This functionality has also been extended in transaction `SEGW`.
+This phase consists of service activation in the gateway system. The service is ready for consumption after this phase. Service activation can be performed using transaction `/IWFND/MAINT_SERVICES`. This functionality has also been extended in transaction `SEGW`.
 
 <hr />
 
