@@ -26,4 +26,4 @@ http://service.com:1234/8102/sap/opu/odata/sap/Z\_DEMO\_ORDERS\_SRV/$metadata
 
 This should give you an XML (only content type supported) response of all the entities, entity sets, and operations allowed in the service.
 
-Now, your web developers can look at the service while we work on mapping the CRUD-Q (Create, Read, Update, Delete, Query) operations from the entity to the RFC.
+Now, your web developers can look at the service while we work on mapping the CRUD-Q (Create, Read, Update, Delete, Query) operations from the entity to the RFC in the next section.
