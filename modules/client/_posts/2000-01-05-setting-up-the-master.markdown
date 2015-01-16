@@ -162,4 +162,4 @@ We are seeing our sales orders! This is great.
   1. We attempt to read a `$count` of all resources
   1. We read in some `/SalesOrders` records from the OData endpoint and display in our List
 
-All of this we have configured so far. Before we can show too much detail about these items, we need a way to pass the information from this master list, through our Router, and into a separate Detail view. To do this, we need to look at assigning click events to our Master view and subscribing/publishing to UI5's EventBus to relay messages.
+All of this we have configured so far. Before we can show too much detail about these items, we need a way to pass the information from this master list, through our Router, and into a separate Detail view. To do this, we need to look at assigning click events to our Master view and using our custom router.
