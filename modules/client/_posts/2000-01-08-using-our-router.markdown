@@ -5,7 +5,7 @@ published: true
 
 # Using our Router
 
-In order to pass details down to our Detail view, we will take advantage of our custom Router to take a deep-linkable route, and load the appropriate detail information.
+In order to pass selected information from our Master or from the URL itself down to our Detail view, we will take advantage of our custom Router to take a deep-linkable route, and load the appropriate detail information.
 
 ## Notifying our Router of a Change
 
