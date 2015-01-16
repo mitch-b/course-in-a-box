@@ -90,4 +90,15 @@ Now, your associations will be created.
 
 ![sap_14_finished_data_model.PNG]({{site.baseurl}}/img/sap_14_finished_data_model.PNG)
 
-Fantastic. Step one of our service generation is complete. Our Data Model is finished, now let's move on to generating the Data Provider classes.
+## Generating Runtime Objects
+
+Fantastic. Our Data Model is defined, now we can generate our runtime objects so that the consumers of the service can start inspecting the data model and beginning to understand the relationships between the entities.
+
+**You will want to generate runtime objects every time you make changes to your data model or service implementations.**
+
+1. Click the Red/White Generate Wheel in the toolbar.
+1. Assign a Technical Service Name. **This will be what your service is reachable at via HTTP.**
+
+![sap_15_generate_runtime_objects.PNG]({{site.baseurl}}/img/sap_15_generate_runtime_objects.PNG)
+
+We are now ready to register our service!
