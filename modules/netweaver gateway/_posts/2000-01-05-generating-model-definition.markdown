@@ -45,6 +45,7 @@ As we saw in the Gateway Service Development Process module, building the Model 
     ![sap_05_choose_fields.PNG]({{site.baseurl}}/img/sap_05_choose_fields.PNG)
 
 1. Mark the Sales Order ID as the key for the structure.
+1. Uncheck 'Create Default Entity Set'. We will create our own.
 
     ![sap_06_set_entity_key.PNG]({{site.baseurl}}/img/sap_06_set_entity_key.PNG)
 
