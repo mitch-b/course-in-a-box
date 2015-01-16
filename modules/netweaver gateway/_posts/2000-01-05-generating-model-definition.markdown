@@ -99,6 +99,8 @@ Fantastic. Our Data Model is defined, now we can generate our runtime objects so
 1. Click the Red/White Generate Wheel in the toolbar.
 1. Assign a Technical Service Name. **This will be what your service is reachable at via HTTP.**
 
+> This step requires a Developer key in your SAP system. If you do not have this, you cannot continue.
+
 ![sap_15_generate_runtime_objects.PNG]({{site.baseurl}}/img/sap_15_generate_runtime_objects.PNG)
 
 We are now ready to register our service!
