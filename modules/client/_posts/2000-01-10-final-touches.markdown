@@ -29,7 +29,7 @@ Like it was promised in the first screen capture, let's add a whole lot more dat
 
 1. Run the application again
 
-    You'll see more data now. No, we didn't have to do any additional work in the Detail controller, because our view object already had binding syntax to `/SalesOrders('x')`.
+    You'll see more data now. No, we didn't have to do any additional work in the Detail controller, because our view object already had binding syntax to `/SalesOrders('x')`, so it knew how to grab these extra properties of our SalesOrder entity.
 
     If you are wondering how to know which fields were available, everything you need to know is in your OData service's $metadata endpoint. Go check that out to see what other data you can pull into the view. I challenge you to add at least one additional element to the screen.
 
