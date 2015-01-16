@@ -14,7 +14,16 @@ In this section, we will code the query operation for the entity sets.
     ![sap_18_map_salesorders_to_ds.PNG]({{site.baseurl}}/img/sap_18_map_salesorders_to_ds.PNG)
 
 1. Click the Propose Mapping button to automatically map from the RFC response.
-1. Additionally, add the two input parameters `SoId` and `BuyerName` of the Function Module as seen manually below:
+1. Additionally, add the two input parameters `SoId` and `BuyerName` of the Function Module as seen manually below.
+1. Click on the box to the left of SoId to select the first row. Click on the Insert Row button at the top.
+1. Click on the small box in the Entity Set property box when selected. This will propose options for the field. Choose `SoId`.
+1. Click and drag `SELPARAMSOID[]` from the right hand side into the Data Source Parameter box for the top row.
+
+1. Similarly, click on the box to the left of `BuyerName` to seleft the row. Click on the Insert Row button at the top.
+1. Click on the small box in the Entity Set property box when selected. This will propose options for the field. Choose `BuyerName`.
+1. Click and drag `SELPARAMBUYERNAME[]` from the right hand side into the Data Source Parameter box for the row.
+
+    The end result should look similar to this screenshot:
 
     ![sap_19_propose_mapping.PNG]({{site.baseurl}}/img/sap_19_propose_mapping.PNG)
 

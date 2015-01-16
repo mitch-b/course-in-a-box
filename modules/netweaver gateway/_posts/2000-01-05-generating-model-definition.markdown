@@ -69,7 +69,7 @@ Now that we have our entity, we can make a collection of that Entity. A collecti
 
     We now have an Entity `SalesOrder` and its corresponding Entity Set `SalesOrders` created.
 
-1. In the same way, go create Entity `LineItem` using table `SOITEMDATA[]` from `BAPI_EPM_SO_GET_LIST`. Mark the keys of the `LineItem` entity as well. Then you can create the Entity Set `LineItems`.
+1. In the same way, go create Entity `LineItem` using table `SOITEMDATA[]` from `BAPI_EPM_SO_GET_LIST`. Mark the keys of the `LineItem` entity as well (`SO_ID` and `SO_ITEM_POS`). Uncheck 'Create Default Entity Set'. Then you can create a new Entity Set `LineItems`.
 
 1. Once your entities and entity sets are created, be sure to Save your progress. You should now see something similar to:
 
