@@ -9,7 +9,7 @@ Now that our component and router are both set up, let's reconfigure our index t
 
 ## Replace default App view with a SplitApp
 
-1. Open `/WebContent/odatalabclient/App.view.xml`.
+1. Open `/WebContent/view/App.view.xml`.
 
     > If this is the first XML file you've opened in the project, Eclipse sometimes defaults to a design view of XML. There is a tab near the bottom which allows you to switch to the Source view. Do that now.
 
