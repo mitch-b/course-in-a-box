@@ -111,7 +111,7 @@ _Response (200 OK):_
 }
 ```
 <br />
-#### `GET http://server.com:1234/sap/opu/odata/sap/Z_DEMO_ORDERS_SRV/SalesOrders?$filter=SoId le '0500000010' and BuyerName eq 'TECUM' $format=json`
+#### `GET http://server.com:1234/sap/opu/odata/sap/Z_DEMO_ORDERS_SRV/SalesOrders?$filter=SoId le '0500000010' and BuyerName eq 'TECUM' &$format=json`
 
 ```json
 {
