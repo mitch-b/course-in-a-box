@@ -13,7 +13,7 @@ Our goal will display Sales Orders in a Master-Detail view. A typical Master-Det
 
 This is a screenshot of what our final product should look like.
 
-![client_05_detail.PNG]({{site.baseurl}}/img/client_05_detail.PNG)
+![client_06_end_product.PNG]({{site.baseurl}}/img/client_06_end_product.PNG)
 
 ## Creating the UI5 Project
 
