@@ -5,7 +5,7 @@ published: true
 
 # Enabling $count in Web API OData v1-3
 
-`$count` is actually a part of OData v3 specification, which is similar to `$inlinecount` of OData v2 specification. `$count` must return a single integer value in the response. `$inlinecount` will return total count of entity set along with the entity set itself in the response. Both have their uses, however when working with SAPUI5, `$count` is expected to be supported. Which is interesting, because SAP NetWeaver Gateway only produces OData v2 services. Regardless, it is a feature that we need to implement. Let's take a look.
+`$count` is actually a part of OData v3 specification, which is similar to `$inlinecount` of OData v2 specification. `$count` must return a single integer value in the response. `$inlinecount` will return total count of entity set along with the entity set itself in the response. Both have their uses, however when working with SAPUI5, `$count` is expected to be supported by default. Which is interesting, because SAP NetWeaver Gateway only produces OData v2 services. Regardless, it is a feature that we need to implement. Let's take a look.
 
 > It is possible to turn **off** $count requests in SAPUI5 by setting your OData Model default count mode. (`oDataModel.setDefaultCoundMode("x")`, where `x` is `Inline`, `Request`, `Both`, or `None`). But for this lab, let's pretend we can't change it and we are required to support it.
 

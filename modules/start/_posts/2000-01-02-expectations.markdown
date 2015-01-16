@@ -7,6 +7,7 @@ published: true
 
 This lab is written to accommodate multiple audiences. After some discussions about OData itself, and building an SAPUI5 client, we will create our own OData services. One service will be written in SAP NetWeaver Gateway. The other will be written in ASP.NET Web API using Visual Studio. Both of these have potential licensing implications, but are provided as a means to fulfill both areas, not that both need to be taken in succession. Skip to whichever section is relevant to **you** and continue.
 
+<br />
 
 1. You understand what a RESTful means as it applies to Web Services. For more information, see [Wikipedia](http://en.wikipedia.org/wiki/Representational_state_transfer#Applied_to_web_services) or your favorite knowledge base.
 1. [Client] You are familiar with JavaScript, as we will be diving deep into SAPUI5.
