@@ -88,6 +88,6 @@ Now that we have our entity, we can make a collection of that Entity. A collecti
 
 Now, your associations will be created.
 
-    ![sap_14_finished_data_model.PNG]({{site.baseurl}}/img/sap_14_finished_data_model.PNG)
+![sap_14_finished_data_model.PNG]({{site.baseurl}}/img/sap_14_finished_data_model.PNG)
 
 Fantastic. Step one of our service generation is complete. Our Data Model is finished, now let's move on to generating the Data Provider classes.
