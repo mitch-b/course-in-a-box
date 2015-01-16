@@ -57,6 +57,8 @@ For this demo, we will operate under the namespace base of `odatalabclient`. In 
     </script>
     ```
 
+    This script snippet is what's generally referred to as the SAPUI5 bootstrapper. Not only does it pull in the `/sap-ui-core.js`, it will pull in the required JavaScript files needed in the `data-sap-ui-libs` attribute.
+
     What we've done is told UI5 core that when it sees namespace `"odatalabclient"` to look in our root folder (`./`). This is relative to our `index.html` file, so `./` translates to our `WebContent` directory. Therefore, if we say `odatalabclient.view`, it should look in `./view`.
 
     For now, let's also change the `sap.m.App` component in the next `<script>` tag to use the proper path. Delete the call to `sap.ui.localResources` (instead of setting our resource root in the script, we set it in the script source above), and change our `viewName` to `"odatalabclient.view.App"`.

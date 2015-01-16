@@ -25,10 +25,10 @@ A Component in the UI5 world is an independent and resuable part of a web applic
 
 <hr />
 
-At the base of our web application, we will create a new instance of a UIComponent. This UIComponent will contain settings and metadata about our core user interface. As part of those settings, we will declare a base view, and what URL routes map to which sub-views inside of the base view (a Master-Detail page).
+At the base of our web application, we will create a new instance of a UIComponent. This UIComponent will contain settings and metadata about our core user interface. As part of those settings, we will declare a base view, and what URL routes map to which sub-views inside of the base view (a Master-Detail container called SplitApp).
 
 1. Create a new file by right clicking the folder `WebContent` and choosing New > File. This will create a new file at the same root as your `index.html` file.
-1. Name the new file `Component.js` (case sensitive).
+1. Name the new file `Component.js` (this filename is case sensitive).
 1. Copy the following snippet into the file.
 
     ```js
@@ -203,7 +203,7 @@ Applications exist independently, and navigation within those applications usual
     });
     ```
 
-    Remember, we already set our custom router class in our custom UIComponent above. So no action needs to be taken, this is just a reminder of how this comes into play with our UIComponent.
+    Remember, we already set our custom router class as the standard router for our custom UIComponent above. So no action needs to be taken, this is just a reminder of how this comes into play with our UIComponent.
 
     ```js
     // ...
@@ -220,7 +220,7 @@ Applications exist independently, and navigation within those applications usual
     // ...
     ```
 
-    In order to use our custom Router, we need to *include* it in our UIComponent as a dependency. At the top of the `Component.js` file, you will find this require statement.
+    Not only do we need to declare it in the routing config of our UIComponent metadata, in order to find our custom Router, we need to *include* it in our UIComponent as a dependency. At the top of the `Component.js` file, you will find a `jQuery.sap.require` statement which does this.
 
 That should be enough of our Component/Router configuration. Let's make sure UI5 knows to use them!
 
