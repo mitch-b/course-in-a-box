@@ -5,5 +5,8 @@ title: SAPUI5 SDK
 # Where can I read more about SAPUI5?
 
 * [SDK Reference](https://sapui5.netweaver.ondemand.com/sdk/#content/Overview.html)
-* //--::--// TODO: SCN link?
+* [SAP Community Network : UI5](http://scn.sap.com/community/developer-center/front-end)
 
+# What else can I do with SAPUI5?
+
+* [Demo Applications from SDK](https://sapui5.netweaver.ondemand.com/sdk/#demoapps.html)
