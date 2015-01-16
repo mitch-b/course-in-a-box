@@ -79,6 +79,8 @@ Now that we have our entity, we can make a collection of that Entity. A collecti
 
 1. Right click on Associations and choose Create
 
+    In the Association Name column, put `LineItems` (even though you see something else below). This will eventually be addressable by `SalesOrders('x')/LineItems`.
+
     ![sap_11_create_association.PNG]({{site.baseurl}}/img/sap_11_create_association.PNG)
 
     For cardinality of the association, we have `1` Sales Order, which has `0..n` Line Items (since a Sales Order needs to exist to have 0 or more line items related to it).
